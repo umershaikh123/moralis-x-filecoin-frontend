@@ -1,11 +1,14 @@
 import { useState, Fragment } from 'react';
 import { Transition } from '@headlessui/react';
-import {
-  XIcon,
-  EmojiHappyIcon,
-  ExclamationCircleIcon
-} from '@heroicons/react/outline';
+// import {
+//   XIcon,
+//   EmojiHappyIcon,
+//   ExclamationCircleIcon
+// } from '@heroicons/react/outline';
 
+import { IoHappy } from 'react-icons/io5';
+import { BsFillExclamationCircleFill } from 'react-icons/bs';
+import { AiFillCloseCircle } from 'react-icons/ai';
 export default function Alert({ alertType, alertBody, triggerAlert, color }) {
   const [showAlert, setShowAlert] = useState(triggerAlert);
 
@@ -27,9 +30,9 @@ export default function Alert({ alertType, alertBody, triggerAlert, color }) {
         <div className="flex">
           <div className="flex-shrink-0">
             {alertType === 'success' ? (
-              <EmojiHappyIcon className="h-5 w-5" />
+              <AiFillCloseCircle className="h-5 w-5" />
             ) : (
-              <ExclamationCircleIcon className="h-5 w-5" />
+              <BsFillExclamationCircleFill className="h-5 w-5" />
             )}
           </div>
           <div className="ml-2">
@@ -42,7 +45,7 @@ export default function Alert({ alertType, alertBody, triggerAlert, color }) {
                 className="inline-flex rounded-md p-1.5 text-gray-900 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-gray-600"
               >
                 <span className="sr-only">Dismiss</span>
-                <XIcon
+                <AiFillCloseCircle
                   className="h-5 w-5"
                   aria-hidden="true"
                   onClick={() => {

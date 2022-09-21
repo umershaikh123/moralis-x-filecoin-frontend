@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import donate from '../assest/donateMoney.png';
 import Navbar from '../components/Navbar';
+// import connectContract from '../../utils/connectContract';
 import styles from '../styles/Home.module.css';
 import { useAccount } from 'wagmi';
 import { useRouter } from 'next/router';

@@ -3,11 +3,16 @@ import React, { useState } from 'react';
 import moneyBag from '../../assest/moneyBag.png';
 import cryptodonate from '../../assest/crytodonate.png';
 import program1 from '../../assest/program1.png';
+import nft1 from '../../assest/image10.png';
+import nft2 from '../../assest/image8.png';
+import nft3 from '../../assest/image9.png';
+
 import Layout from '../../components/Layout';
 import Person from '../../assest/person.png';
 import styles from '../../styles/Home.module.css';
 import Footer from '../../components/footer';
 import CauseBox from '../../components/causeBox';
+
 const ProfilePage = () => {
   return (
     <div>
@@ -58,26 +63,24 @@ const ProfilePage = () => {
                 NFT&apos;s Recieved
               </p>
               <div className="flex">
-                <div className="w-fit shadow-green dark:text-light-green ">
-                  <Image
-                    src={cryptodonate}
-                    height="150px"
-                    alt="nft-holder"
-                    className={styles.boxShadow}
-                  />
+                <div className="w-fit  hover:scale-110 transition ease-in duration-150 dark:text-light-green ">
+                  <Image src={nft2} height="150px" alt="nft-holder" />
                 </div>
-                <div className="w-fit shadow-green ml-12 dark:text-light-green ">
-                  <Image
-                    src={cryptodonate}
-                    height="150px"
-                    alt="nft-holder"
-                    className={styles.boxShadow}
-                  />
+                <div className="w-fit   ml-12  rounded-lg hover:scale-110 transition ease-in duration-150 dark:text-light-green ">
+                  <Image src={nft1} height="150px" alt="nft-holder" />
+                </div>
+
+                <div className="w-fit   ml-12  rounded-lg hover:scale-110 transition ease-in duration-150 dark:text-light-green ">
+                  <Image src={nft3} height="150px" alt="nft-holder" />
                 </div>
               </div>
             </div>
 
             <div>
+              <div className="   flex   ">
+                <p className="text-2xl  font-bold   mt-12 ">Donated programs</p>
+              </div>
+
               <CauseBox
                 buttonText="Donate"
                 image={program1}
@@ -86,7 +89,7 @@ const ProfilePage = () => {
                 progressAmount="500/1000" // dynamic
                 progressValue={50}
                 title="Health care program"
-                buttonDesign={`mt-5 bg-light-green mr-5 mt-6 ml-1  px-5 text-DarkBlack font-bold text-xs rounded-md mb-3`}
+                buttonDesign={`mt-5 bg-light-green mr-5    px-5 text-DarkBlack font-bold text-xs rounded-md mb-3`}
                 boxDesign="w-56 shadow-green pb-4 ml-3"
                 textColor={`darkGreen`}
                 addDescription={false}

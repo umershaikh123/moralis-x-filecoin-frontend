@@ -16,7 +16,6 @@ const FundingProgram = () => {
   const [completed, setCompleted] = useState(false);
   const [reject, setReject] = useState(false);
   const router = useRouter();
-  const clicked = 'text-orange-600';
 
   const detailPage = () => {
     router.push(`/detail/1`); //Dyamic

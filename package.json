@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.2",
-    "@heroicons/react": "^2.0.11",
+    "@heroicons/react": "v1",
     "@rainbow-me/rainbowkit": "^0.5.1",
     "@rainbow-me/rainbowkit-siwe-next-auth": "^0.1.2",
     "ethers": "^5.7.1",

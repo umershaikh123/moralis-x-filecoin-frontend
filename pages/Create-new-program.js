@@ -1,21 +1,3 @@
-// create form page
-
-// console.log('ProgramName :  ', programName);
-// console.log('cause:  ', Cause);
-// console.log(' Description:  ', description);
-// console.log('image:  ', Image);
-// console.log('Video:  ', Video);
-// console.log('twitter:  ', twitter);
-// console.log('facebook :  ', facebook);
-// console.log('Website :  ', Website);
-// console.log('FundGoal :  ', FundGoal);
-// console.log('From submitted ');
-// import { ethers } from 'ethers';
-// const ethers = require('ethers');
-// import connectContract from '../../utils/connectContract';
-/** @format */
-
-// Import the NFTStorage class and File constructor from the 'nft.storage' package
 import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
@@ -23,21 +5,27 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Funder from '../assest/Funder.png';
 import vector from '../assest/Vector.png';
+import { Web3Storage } from 'web3.storage';
 import styles from '../styles/Home.module.css';
 import { useRouter } from 'next/router';
 import Footer from '../components/footer';
-import getRandomImage from '../../utils/getRandomImage';
+import connectContract from '../../utils/connectContract';
 import Alert from '../components/Alert';
 import { NFTStorage, File } from 'nft.storage';
 
 const NFT_STORAGE_API_KEY = process.env.NFT_STORAGE_API_KEY;
 
-function CreateNewProgram({ Program }) {
+// function CreateNewProgram({ Program }) {
+function CreateNewProgram() {
+  let counter;
   const router = useRouter();
   const _fundingPage = () => {
     router.push('/funding-programs'); // Make this Dynamic
     console.log('back button pressed ');
   };
+  const [success, setSuccess] = useState(null);
+  const [message, setMessage] = useState(null);
+
   const [eventID, seteventID] = useState(null);
   const [loading, setLoading] = useState(null);
   const [programName, setProgramName] = useState('');
@@ -61,6 +49,8 @@ function CreateNewProgram({ Program }) {
   const [value1, setValue1] = useState('');
   const [value2, setValue2] = useState('');
 
+  // VALUES SHOULD NOT BE GREATER THAN GOAL
+  // VALUE 1 AND VALUE 2
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -78,7 +68,8 @@ function CreateNewProgram({ Program }) {
       };
 
       const client = new Web3Storage({
-        token: process.env.WEB3STORAGE_TOKEN
+        token:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDJBNDRGRTdiMGU5MzhFNzVGNDg3QTU0MzBFZEQzNDRkMjgxNkMyYjQiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NjM2NTk0MTUzNjYsIm5hbWUiOiJtb3JhbGlzIGhhY2thdGhvbiJ9.B-l87X3hMdRAGhs5xPze9Faq7w70y-OsBwVdi-PP2Qo'
       });
 
       const files = await makeFileObjects(body);
@@ -152,7 +143,10 @@ function CreateNewProgram({ Program }) {
         let CID3 = metadata3;
         let _value1 = value1;
         let _value2 = value2;
-        let programId = Program.programId;
+
+        const id = await Contract.getId(counter);
+        counter += 1;
+        let programId = id;
 
         const txn = await Contract.storeNFTURI(
           CID1,
@@ -263,7 +257,7 @@ function CreateNewProgram({ Program }) {
 
               <div className="flex text-left">
                 <input
-                  className="ml-form1 h-10 w-custom1  shadow-md rounded-lg bg-form text-center border-2"
+                  className="ml-form1 h-10 min-w-full  shadow-md rounded-lg bg-form text-center border-2"
                   id="Program Name"
                   type="text"
                   required
@@ -275,13 +269,13 @@ function CreateNewProgram({ Program }) {
 
             {/*2 section */}
             <div className="flex mt-4 ">
-              <h1 className=" text-lg font-light text-light-green ml-24 mb-12">
+              <label className=" text-lg font-light text-light-green ml-24 mb-12">
                 Cause of the program
-              </h1>
+              </label>
 
               <div className="flex ">
                 <input
-                  className="ml-form2 h-10 w-custom1 shadow-md rounded-lg bg-form text-center border-2"
+                  className="ml-form2  h-12 min-w-full  shadow-md rounded-lg bg-form text-center border-2"
                   id="title"
                   type="text"
                   required
@@ -299,10 +293,11 @@ function CreateNewProgram({ Program }) {
 
               <div className="flex ">
                 <input
-                  className="ml-form3 h-32 w-custom1  shadow-md rounded-lg bg-form text-center border-2 mb-12"
+                  className="ml-form3 h-32 min-w-full shadow-md rounded-lg bg-form text-center border-2 mb-12"
                   id="title"
                   type="text"
                   value={description}
+                  required
                   onChange={e => setDescription(e.target.value)}
                 />
               </div>
@@ -320,7 +315,7 @@ function CreateNewProgram({ Program }) {
                   id="Backgroud"
                   accept="image/*"
                   type="file"
-                  // required
+                  required
                   value={Image}
                   onChange={e => setImage(e.target.value)}
                 />
@@ -432,7 +427,7 @@ function CreateNewProgram({ Program }) {
                   id="Backgroud"
                   accept="image/*"
                   type="file"
-                  // required
+                  required
                   value={NFT1}
                   onChange={e => setNFT1(e.target.value)}
                 />
@@ -453,7 +448,7 @@ function CreateNewProgram({ Program }) {
                   className="ml-32 h-9 w-80 shadow-md rounded-lg bg-form text-center border-2 "
                   id="Backgroud"
                   type="text"
-                  // required
+                  required
                   value={Title1}
                   onChange={e => setTitle1(e.target.value)}
                 />
@@ -476,7 +471,7 @@ function CreateNewProgram({ Program }) {
                   id="Backgroud"
                   accept="image/*"
                   type="file"
-                  // required
+                  required
                   value={NFT2}
                   onChange={e => setNFT2(e.target.value)}
                 />
@@ -497,7 +492,7 @@ function CreateNewProgram({ Program }) {
                   className="ml-32 h-9 w-80 shadow-md rounded-lg bg-form text-center border-2 "
                   id="Backgroud"
                   type="text"
-                  // required
+                  required
                   value={Title2}
                   onChange={e => setTitle2(e.target.value)}
                 />
@@ -519,7 +514,7 @@ function CreateNewProgram({ Program }) {
                   className="ml-32 h-9 w-80 shadow-md rounded-lg bg-form text-center border-2 "
                   id="Backgroud"
                   type="number"
-                  // required
+                  required
                   value={value1}
                   onChange={e => setValue1(e.target.value)}
                 />
@@ -542,7 +537,7 @@ function CreateNewProgram({ Program }) {
                   id="Backgroud"
                   accept="image/*"
                   type="file"
-                  // required
+                  required
                   value={NFT3}
                   onChange={e => setNFT3(e.target.value)}
                 />
@@ -563,7 +558,7 @@ function CreateNewProgram({ Program }) {
                   className="ml-32 h-9 w-80 shadow-md rounded-lg bg-form text-center border-2 "
                   id="Backgroud"
                   type="text"
-                  // required
+                  required
                   value={Title3}
                   onChange={e => setTitle3(e.target.value)}
                 />
@@ -585,7 +580,7 @@ function CreateNewProgram({ Program }) {
                   className="ml-32 h-9 w-80 shadow-md rounded-lg bg-form text-center border-2 "
                   id="Backgroud"
                   type="number"
-                  // required
+                  required
                   value={value2}
                   onChange={e => setValue2(e.target.value)}
                 />
@@ -617,15 +612,15 @@ function CreateNewProgram({ Program }) {
 
 export default CreateNewProgram;
 
-export async function getServerSideProps(context) {
-  const { id } = context.params;
-  const { data } = await client.query({
-    // Query event (programCreated) data
-  });
+// export async function getServerSideProps(context) {
+//   const { id } = context.params;
+//   const { data } = await client.query({
+//     // Query event (programCreated) data
+//   });
 
-  return {
-    props: {
-      Program: data.event
-    }
-  };
-}
+//   return {
+//     props: {
+//       Program: data.event
+//     }
+//   };
+// }

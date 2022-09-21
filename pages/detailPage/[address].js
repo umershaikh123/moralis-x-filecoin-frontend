@@ -54,7 +54,7 @@ const detailPage = () => {
         {/* Video */}
         <div className={styles.videoWrapper}>
           <ReactPlayer
-            url="https://youtu.be/aKYPpT4ZPeA?list=RDaKYPpT4ZPeA"
+            url="https://www.youtube.com/watch?v=Qcn7w9yPyWo"
             controls={true}
             width="100%"
             height="100%"
@@ -95,13 +95,13 @@ const detailPage = () => {
             <BsFillPersonFill size={25} className="mr-4" />
             <p className="text-md font-semibold">
               Address of Organizer:{' '}
-              <a
+              {/* <a
                 href={`https://mumbai.polygonscan.com/`}
                 target="_blank"
                 rel="noopener noreferrer"
-              >
-                0xb64x6z6z6
-              </a>
+              > */}
+              0xb64x6z6z6
+              {/* </a> */}
             </p>
           </div>
 
@@ -109,15 +109,15 @@ const detailPage = () => {
             <BsFillChatDotsFill size={25} className="mr-4" />
             <p className="text-md font-semibold">
               Chat with the Organizer
-              <a
+              {/* <a
                 href={`https://mumbai.polygonscan.com/`}
                 target="_blank"
                 rel="noopener noreferrer"
-              >
-                <button className="px-6 py-1 ml-4 rounded-lg max-w-button   font-bold  bg-Text-green  text-DarkBlack hover:scale-110  transition ease-in duration-150  ">
-                  chat
-                </button>
-              </a>
+              > */}
+              <button className="px-6 py-1 ml-4 rounded-lg max-w-button   font-bold  bg-Text-green  text-DarkBlack hover:scale-110  transition ease-in duration-150  ">
+                chat
+              </button>
+              {/* </a> */}
             </p>
           </div>
 
