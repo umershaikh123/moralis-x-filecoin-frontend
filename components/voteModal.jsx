@@ -9,12 +9,12 @@ export default function VoteModal({ showModal, setShowModal }) {
     <>
       {showModal ? (
         <>
-          <div className="justify-center items-center   flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+          <div className="justify-center items-center bg-black-background transition ease-in duration-150  flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
             <div className="relative w-custom8 my-6  max-w-sm  ">
               <div className="border-0 rounded-lg bg-DarkBlack p-4 shadow-lg relative flex flex-col w-full bg-black-background outline-none focus:outline-none">
                 <div className="flex  items-center justify-start  ">
                   <button
-                    className="bg-light-green text-black-background font-bold outline-none focus:outline-none px-6  rounded-md
+                    className="bg-red py-2 text-black-background font-bold outline-none focus:outline-none px-6  rounded-md
                      text-md  mr-1 mb-3 hover:scale-110 transition ease-in duration-150"
                     type="button"
                     onClick={() => setShowModal(false)}

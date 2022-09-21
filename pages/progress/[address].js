@@ -9,15 +9,6 @@ import p3 from '../../assest/Ellipse10.png';
 import p4 from '../../assest/Ellipse13.png';
 import p5 from '../../assest/Ellipse14.png';
 
-import { BiNotepad } from 'react-icons/bi';
-import VoteModal from '../../components/voteModal';
-import ReactPlayer from 'react-player';
-import {
-  AiFillCheckCircle,
-  AiOutlineTwitter,
-  AiFillCloseSquare
-} from 'react-icons/ai';
-import { IoTimeSharp } from 'react-icons/io5';
 import {
   BsFillPersonFill,
   BsFillChatDotsFill,
@@ -27,17 +18,12 @@ import {
 
 import { RiMoneyDollarCircleFill } from 'react-icons/ri';
 import { FiTarget } from 'react-icons/fi';
-import { GiOnTarget, GiPositionMarker } from 'react-icons/gi';
-import { CgWebsite } from 'react-icons/cg';
+
 import { useRouter } from 'next/router';
 import styles from '../../styles/Home.module.css';
 
-import { HiOutlineClipboardList } from 'react-icons/hi';
-
-import { ImCross } from 'react-icons/im';
-
 import { BsClockFill } from 'react-icons/bs';
-import { MdCheckCircle } from 'react-icons/md';
+import DonateModal from '../../components/donateModal';
 
 const ProgressPage = () => {
   const router = useRouter();
@@ -45,8 +31,10 @@ const ProgressPage = () => {
     router.push('/funding-programs'); // Make this Dynamic
     console.log('back button pressed ');
   };
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="bg-black-background   flex  w-custom5   text-light-green ">
+      <DonateModal setShowModal={setShowModal} showModal={showModal} />
       {/* Left side */}
       <div className="flex flex-col w-6/12 ml-16   ">
         <button

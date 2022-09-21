@@ -136,27 +136,27 @@ const CompletedPage = () => {
       {/* Right side */}
       <div className="flex flex-col w-6/12 text-light-green rounded-xl justify-end items-end mt-8 mr-40 mt-12  ">
         <CauseBox
-          image={program1L}
+          buttonText="completed"
+          image={program1}
           message=" Help us fight feed thousands of people in poverty, homeless
                   people and provide medical care for the poor"
-          progressAmount="500/1000" // dynamic
-          progressValue={50}
+          progressAmount="1000/1000"
+          progressValue={100}
           title="Health care program"
-          buttonDesign={`mt-5 bg-orange p-1 ml-1  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
-          progressDesign={`ml-20 h-4 rounded-lg bg-transparent mb-3 w-28`}
-          // onClicked={vote}
-          boxDesign="w-60  shadow-lightBlue w-custom4 pb-16 ml-20  "
+          buttonDesign={`mt-5 bg-blue font-semiboldtransition ease-in duration-150   ml-2 px-4 py-0 text-white-background text-xs rounded-md mb-3`}
+          progressDesign={`ml-16 h-4 bg-lightBlue rounded-lg bg-transparent mb-3 w-28`}
+          boxDesign="  shadow-lightBlue pb-5 w-custom4   mr-4"
           textColor={`darkGreen`}
           addDescription={true}
         />
 
-        <div className="ml-28 mt-6  ">
-          <button className="px-10 py-2 mb-6 ml-24 rounded-md   font-bold  bg-lightBlue text-DarkBlack hover:scale-110  transition ease-in duration-150  ">
+        <div className="  mt-6  ">
+          <button className="px-10 py-2 mb-6 ml-28 rounded-md   font-bold  bg-lightBlue text-DarkBlack hover:scale-110  transition ease-in duration-150  ">
             Completed
           </button>
 
           <div>
-            <button className="px-10 py-2 mb-6 ml-24 rounded-md   font-bold  bg-light-green text-DarkBlack hover:scale-110  transition ease-in duration-150  ">
+            <button className="px-10 py-2 mb-6 ml-28 rounded-md   font-bold  bg-light-green text-DarkBlack hover:scale-110  transition ease-in duration-150  ">
               Withdraw Funds (only Owner)
             </button>
           </div>
@@ -165,7 +165,7 @@ const CompletedPage = () => {
             <RiMoneyDollarCircleFill size={45} className=" " />
             <p className="text-xl font-semibold mt-2  ml-2">
               Total Funds Raised :{' '}
-              <span className="text-green ml-1"> 100 $</span>
+              <span className="text-green ml-1"> 10000 $</span>
             </p>
           </div>
 

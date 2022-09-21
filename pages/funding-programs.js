@@ -7,6 +7,7 @@ import program2 from '../assest/p2.png';
 import program3 from '../assest/p3.png';
 import program4 from '../assest/p4.png';
 import CauseBox from '../components/causeBox';
+import DonateModal from '../components/donateModal';
 import { useRouter } from 'next/router';
 import { GiSandsOfTime } from 'react-icons/gi';
 import { BiDollarCircle } from 'react-icons/bi';
@@ -20,7 +21,7 @@ const FundingProgram = () => {
   const [completed, setCompleted] = useState(false);
   const [reject, setReject] = useState(false);
   const router = useRouter();
-
+  const [showModal, setShowModal] = useState(false);
   const detailPage = () => {
     router.push(`/detail/1`); //Dyamic
   };
@@ -59,6 +60,10 @@ const FundingProgram = () => {
     router.push(`/completed/8`);
   };
 
+  const FailedButton = () => {
+    setShowModal(true);
+  };
+
   const CreateNewProgram = () => {
     router.push('/Create-new-program');
     console.log('button pressed');
@@ -67,6 +72,7 @@ const FundingProgram = () => {
   return (
     <div className={styles.homes}>
       <Layout>
+        <DonateModal setShowModal={setShowModal} showModal={showModal} />
         <div className=" ">
           <div className="mt-10 flex">
             <p className="text-light-green font-bold ml-24 text-3xl   ">
@@ -228,7 +234,7 @@ const FundingProgram = () => {
                 title="Health care program"
                 buttonDesign={`mt-5 bg-red p-1 ml-1 transition ease-in duration-150  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
                 progressDesign={`ml-20 h-4 rounded-lg bg-white-background before:bg-white-background mb-3 w-28`}
-                onClicked={progressButton}
+                onClicked={FailedButton}
                 boxDesign="w-custom4 shadow-red ml-20 "
                 textColor={`darkGreen`}
                 addDescription={true}
@@ -246,7 +252,7 @@ const FundingProgram = () => {
                 title="Nature relieve funds"
                 buttonDesign={`mt-5 bg-red p-1 ml-1 transition ease-in duration-150  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
                 progressDesign={`ml-20 h-4 rounded-lg bg-transparent mb-3 w-28`}
-                onClicked={progressButton}
+                onClicked={FailedButton}
                 boxDesign="w-custom4 shadow-red  "
                 textColor={`darkGreen`}
                 addDescription={true}
@@ -264,7 +270,7 @@ const FundingProgram = () => {
                 title="Health care program"
                 buttonDesign={`mt-5 bg-red p-1 ml-1 transition ease-in duration-150  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
                 progressDesign={`ml-20 h-4 rounded-lg  bg-white-background mb-3 w-28`}
-                onClicked={progressButton}
+                onClicked={FailedButton}
                 boxDesign="w-custom4 shadow-red   "
                 textColor={`darkGreen`}
                 addDescription={true}
@@ -282,7 +288,7 @@ const FundingProgram = () => {
                 title="Children care program"
                 buttonDesign={`mt-5 bg-red p-1 ml-1 transition ease-in duration-150  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
                 progressDesign={`ml-20 h-4 rounded-lg bg-transparent mb-3 w-28`}
-                onClicked={progressButton}
+                onClicked={FailedButton}
                 boxDesign=" w-custom4 shadow-red   "
                 textColor={`darkGreen`}
                 addDescription={true}
@@ -397,7 +403,7 @@ const FundingProgram = () => {
                 title="Nature relieve funds"
                 buttonDesign={`mt-5 bg-blue font-semibold transition ease-in duration-150  ml-2 px-4 py-0 text-white-background text-xs rounded-md mb-3`}
                 progressDesign={`ml-16 h-4 rounded-lg bg-transparent mb-3 w-28`}
-                onClicked={progressButton}
+                onClicked={completedButton}
                 boxDesign=" w-custom4 shadow-lightBlue "
                 textColor={`darkGreen`}
                 addDescription={true}
@@ -415,7 +421,7 @@ const FundingProgram = () => {
                 title="Health care program"
                 buttonDesign={`mt-5 bg-blue font-semibold transition ease-in duration-150  ml-2 px-4 py-0 text-white-background text-xs rounded-md mb-3`}
                 progressDesign={`ml-16 h-4 rounded-lg bg-transparent mb-3 w-28`}
-                onClicked={progressButton}
+                onClicked={completedButton}
                 boxDesign=" w-custom4 shadow-lightBlue  "
                 textColor={`darkGreen`}
                 addDescription={true}
@@ -433,7 +439,7 @@ const FundingProgram = () => {
                 title="Children care program"
                 buttonDesign={`mt-5 bg-blue font-semibold transition ease-in duration-150  ml-2 px-4 py-0 text-white-background text-xs rounded-md mb-3`}
                 progressDesign={`ml-16 h-4 rounded-lg bg-transparent mb-3 w-28`}
-                onClicked={progressButton}
+                onClicked={completedButton}
                 boxDesign="  w-custom4 shadow-lightBlue  "
                 textColor={`darkGreen`}
                 addDescription={true}
