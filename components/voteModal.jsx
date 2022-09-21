@@ -79,12 +79,3 @@ export default function VoteModal({ showModal, setShowModal }) {
     </>
   );
 }
-
-/* <button
-                  className="p-1   bg-transparent border-0    text-3xl leading-none font-semibold outline-none focus:outline-none"
-                  onClick={() => setShowModal(false)}
-                >
-                  <span className="bg-transparent text-light-green  w-6 text-2xl  outline-none focus:outline-none">
-                    <AiOutlineCloseCircle />
-                  </span>
-                </button> */

@@ -8,6 +8,9 @@ import program3 from '../assest/p3.png';
 import program4 from '../assest/p4.png';
 import CauseBox from '../components/causeBox';
 import DonateModal from '../components/donateModal';
+
+import FailedModal from '../components/failedModal';
+
 import { useRouter } from 'next/router';
 import { GiSandsOfTime } from 'react-icons/gi';
 import { BiDollarCircle } from 'react-icons/bi';
@@ -22,6 +25,7 @@ const FundingProgram = () => {
   const [reject, setReject] = useState(false);
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
+
   const detailPage = () => {
     router.push(`/detail/1`); //Dyamic
   };
@@ -72,8 +76,9 @@ const FundingProgram = () => {
   return (
     <div className={styles.homes}>
       <Layout>
-        <DonateModal setShowModal={setShowModal} showModal={showModal} />
         <div className=" ">
+          <FailedModal setShowModal={setShowModal} showModal={showModal} />
+          {/* <DonateModal setShowModal={setShowModal} showModal={showModal} /> */}
           <div className="mt-10 flex">
             <p className="text-light-green font-bold ml-24 text-3xl   ">
               Funding programs
