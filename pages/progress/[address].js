@@ -140,7 +140,10 @@ const ProgressPage = () => {
         />
 
         <div className="mr-16 mt-6  ">
-          <button className="px-10 py-2 mb-6 ml-24 rounded-md   font-bold  bg-light-green  text-DarkBlack hover:scale-110  transition ease-in duration-150  ">
+          <button
+            onClick={() => setShowModal(true)}
+            className="px-10 py-2 mb-6 ml-24 rounded-md   font-bold  bg-light-green  text-DarkBlack hover:scale-110  transition ease-in duration-150  "
+          >
             Donate
           </button>
 

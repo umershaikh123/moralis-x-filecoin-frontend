@@ -11,7 +11,7 @@ export default function DonateModal({ showModal, setShowModal }) {
             <div className="relative w-custom1 my-6  max-w-sm  ">
               <div className="border-0 rounded-lg bg-DarkBlack p-4 shadow-lg relative flex flex-col w-full   ">
                 <button
-                  className="bg-red w-24 py-2 text-black-background font-bold outline-none focus:outline-none px-6  rounded-md
+                  className="bg-red w-24 py-2 text-black-background font-bold   px-6  rounded-md
                      text-md  mr-1   hover:scale-110 transition ease-in duration-150"
                   type="button"
                   onClick={() => setShowModal(false)}
