@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 import { useRouter } from 'next/router';
+import { Progress } from '@material-tailwind/react';
+
 const CauseBox = ({
   addbutton,
   buttonDesign,
@@ -16,7 +18,8 @@ const CauseBox = ({
   boxDesign,
 
   textColor,
-  addDescription
+  addDescription,
+  progressLabel
 }) => {
   const router = useRouter();
   const detailPage = () => {

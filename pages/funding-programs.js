@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import program1 from '../assest/program1.png';
+import { Progress } from '@material-tailwind/react';
 import Image from 'next/image';
 import program2 from '../assest/p2.png';
 import program3 from '../assest/p3.png';
@@ -136,9 +137,9 @@ const FundingProgram = () => {
           </div>
         </div>
 
-        <div>
+        <div className=" mb-16 transition ease-in duration-150  ">
           {verify && (
-            <div className="flex  mx-auto space-x-20 flex-wrap ">
+            <div className="flex  mx-auto space-x-20 flex-wrap   ">
               <CauseBox
                 addbutton={true}
                 addProgress={false}
@@ -149,10 +150,10 @@ const FundingProgram = () => {
                 progressAmount="500/1000" // dynamic
                 progressValue={50}
                 title="Scholarship program"
-                buttonDesign={`mt-5 bg-orange p-1 ml-1  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
+                buttonDesign={`mt-5 bg-orange p-1 ml-1 transition ease-in duration-150  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
                 progressDesign={`ml-20 h-4 rounded-lg bg-transparent mb-3 w-28`}
                 onClicked={verifyButton}
-                boxDesign="w-64 shadow-orange ml-20  "
+                boxDesign="w-custom4 shadow-orange ml-20  "
                 textColor={`darkGreen`}
                 addDescription={true}
               />
@@ -167,10 +168,10 @@ const FundingProgram = () => {
                 progressAmount="500/1000" // dynamic
                 progressValue={50}
                 title="Nature relieve funds"
-                buttonDesign={`mt-5 bg-orange p-1 ml-1  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
+                buttonDesign={`mt-5 bg-orange p-1 ml-1 transition ease-in duration-150  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
                 progressDesign={`ml-20 h-4 rounded-lg bg-transparent mb-3 w-28`}
                 onClicked={verifyButton}
-                boxDesign="w-64 shadow-orange  "
+                boxDesign="w-custom4 shadow-orange  "
                 textColor={`darkGreen`}
                 addDescription={true}
               />
@@ -185,10 +186,10 @@ const FundingProgram = () => {
                 progressAmount="500/1000" // dynamic
                 progressValue={50}
                 title="Health care program"
-                buttonDesign={`mt-5 bg-orange p-1 ml-1  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
+                buttonDesign={`mt-5 bg-orange p-1 ml-1 transition ease-in duration-150  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
                 progressDesign={`ml-20 h-4 rounded-lg bg-transparent mb-3 w-28`}
                 onClicked={verifyButton}
-                boxDesign="w-64 shadow-orange   "
+                boxDesign="w-custom4 shadow-orange   "
                 textColor={`darkGreen`}
                 addDescription={true}
               />
@@ -203,10 +204,10 @@ const FundingProgram = () => {
                 progressAmount="500/1000" // dynamic
                 progressValue={50}
                 title="Children care program"
-                buttonDesign={`mt-5 bg-orange p-1 ml-1  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
+                buttonDesign={`mt-5 bg-orange p-1 ml-1  transition ease-in duration-150 px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
                 progressDesign={`ml-20 h-4 rounded-lg bg-transparent mb-3 w-28`}
                 onClicked={verifyButton}
-                boxDesign=" w-64 shadow-orange   "
+                boxDesign=" w-custom4 shadow-orange   "
                 textColor={`darkGreen`}
                 addDescription={true}
               />
@@ -214,7 +215,7 @@ const FundingProgram = () => {
           )}
 
           {reject && (
-            <div className="flex mx-auto space-x-20 flex-wrap ">
+            <div className="flex mx-auto space-x-20 flex-wrap   ">
               <CauseBox
                 addbutton={true}
                 addProgress={false}
@@ -225,10 +226,10 @@ const FundingProgram = () => {
                 progressAmount="500/1000" // dynamic
                 progressValue={50}
                 title="Health care program"
-                buttonDesign={`mt-5 bg-red p-1 ml-1  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
-                progressDesign={`ml-20 h-4 rounded-lg bg-transparent mb-3 w-28`}
+                buttonDesign={`mt-5 bg-red p-1 ml-1 transition ease-in duration-150  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
+                progressDesign={`ml-20 h-4 rounded-lg bg-white-background before:bg-white-background mb-3 w-28`}
                 onClicked={progressButton}
-                boxDesign="w-64 shadow-red ml-20 "
+                boxDesign="w-custom4 shadow-red ml-20 "
                 textColor={`darkGreen`}
                 addDescription={true}
               />
@@ -243,10 +244,10 @@ const FundingProgram = () => {
                 progressAmount="500/1000" // dynamic
                 progressValue={50}
                 title="Nature relieve funds"
-                buttonDesign={`mt-5 bg-red p-1 ml-1  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
+                buttonDesign={`mt-5 bg-red p-1 ml-1 transition ease-in duration-150  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
                 progressDesign={`ml-20 h-4 rounded-lg bg-transparent mb-3 w-28`}
                 onClicked={progressButton}
-                boxDesign="w-64 shadow-red  "
+                boxDesign="w-custom4 shadow-red  "
                 textColor={`darkGreen`}
                 addDescription={true}
               />
@@ -261,10 +262,10 @@ const FundingProgram = () => {
                 progressAmount="500/1000" // dynamic
                 progressValue={50}
                 title="Health care program"
-                buttonDesign={`mt-5 bg-red p-1 ml-1  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
-                progressDesign={`ml-20 h-4 rounded-lg bg-transparent mb-3 w-28`}
+                buttonDesign={`mt-5 bg-red p-1 ml-1 transition ease-in duration-150  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
+                progressDesign={`ml-20 h-4 rounded-lg  bg-white-background mb-3 w-28`}
                 onClicked={progressButton}
-                boxDesign="w-64 shadow-red   "
+                boxDesign="w-custom4 shadow-red   "
                 textColor={`darkGreen`}
                 addDescription={true}
               />
@@ -279,10 +280,10 @@ const FundingProgram = () => {
                 progressAmount="500/1000" // dynamic
                 progressValue={50}
                 title="Children care program"
-                buttonDesign={`mt-5 bg-red p-1 ml-1  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
+                buttonDesign={`mt-5 bg-red p-1 ml-1 transition ease-in duration-150  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
                 progressDesign={`ml-20 h-4 rounded-lg bg-transparent mb-3 w-28`}
                 onClicked={progressButton}
-                boxDesign=" w-64 shadow-red   "
+                boxDesign=" w-custom4 shadow-red   "
                 textColor={`darkGreen`}
                 addDescription={true}
               />
@@ -301,64 +302,64 @@ const FundingProgram = () => {
                 progressAmount="500/1000" // dynamic
                 progressValue={50}
                 title="Health care program"
-                buttonDesign={`mt-5 bg-light-green   ml-1  px-5 ml-2  text-DarkBlack font-bold text-xs rounded-md mb-3`}
+                buttonDesign={`mt-5 bg-light-green  transition ease-in duration-150  ml-1  px-5 ml-2  text-DarkBlack font-bold text-xs rounded-md mb-3`}
                 progressDesign={`ml-20 h-4 rounded-lg bg-transparent mb-3 w-28`}
                 onClicked={progressButton}
-                boxDesign="w-64 shadow-green w-custom4 ml-20  "
+                boxDesign="  shadow-green w-custom4 ml-20  "
                 textColor={`darkGreen`}
                 addDescription={true}
               />
 
               <CauseBox
                 addbutton={true}
-                addProgress={false}
+                addProgress={true}
                 buttonText="Donate"
                 image={program2}
                 message=" This is a Nature fund program to help the and save animal life , 
                  and provide enough food for the poor animals in zoos"
-                progressAmount="500/1000" // dynamic
-                progressValue={50}
+                progressAmount="2000/10000" // dynamic
+                progressValue={100}
                 title="Nature relieve funds"
-                buttonDesign={`mt-5 bg-light-green  p-1 ml-1  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
+                buttonDesign={`mt-5 bg-light-green transition ease-in duration-150   ml-1  px-5 ml-2  text-DarkBlack font-bold text-xs rounded-md mb-3`}
                 progressDesign={`ml-20 h-4 rounded-lg bg-transparent mb-3 w-28`}
                 onClicked={progressButton}
-                boxDesign="w-64 shadow-green  "
+                boxDesign=" w-custom4 shadow-green  "
                 textColor={`darkGreen`}
                 addDescription={true}
               />
 
               <CauseBox
                 addbutton={true}
-                addProgress={false}
+                addProgress={true}
                 buttonText="Donate"
                 image={program3}
                 message=" Help us fight feed thousands of people in poverty, homeless
                   people and provide medical care for the poor"
-                progressAmount="500/1000" // dynamic
-                progressValue={50}
+                progressAmount="13000/15000" // dynamic
+                progressValue={70}
                 title="Health care program"
-                buttonDesign={`mt-5 bg-light-green  p-1 ml-1  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
+                buttonDesign={`mt-5 bg-light-green transition ease-in duration-150   ml-1  px-5 ml-2  text-DarkBlack font-bold text-xs rounded-md mb-3`}
                 progressDesign={`ml-20 h-4 rounded-lg bg-transparent mb-3 w-28`}
                 onClicked={progressButton}
-                boxDesign="w-64 shadow-green   "
+                boxDesign=" w-custom4 shadow-green   "
                 textColor={`darkGreen`}
                 addDescription={true}
               />
 
               <CauseBox
                 addbutton={true}
-                addProgress={false}
+                addProgress={true}
                 buttonText="Donate"
                 image={program4}
                 message=" Help us fight feed thousands of children in poverty, 
                   provide education and food for them "
-                progressAmount="500/1000" // dynamic
-                progressValue={50}
+                progressAmount="6500/7000" // dynamic
+                progressValue={90}
                 title="Children care program"
-                buttonDesign={`mt-5 bg-light-green  p-1 ml-1  px-6 py-2 ml-2  text-white-background font-bold text-xs rounded-md mb-3`}
+                buttonDesign={`mt-5 bg-light-green  transition ease-in duration-150  ml-1  px-5 ml-2  text-DarkBlack font-bold text-xs rounded-md mb-3`}
                 progressDesign={`ml-20 h-4 rounded-lg bg-transparent mb-3 w-28`}
                 onClicked={progressButton}
-                boxDesign=" w-64 shadow-green   "
+                boxDesign="  w-custom4 shadow-green   "
                 textColor={`darkGreen`}
                 addDescription={true}
               />
@@ -376,10 +377,64 @@ const FundingProgram = () => {
                 progressAmount="1000/1000"
                 progressValue={100}
                 title="Health care program"
-                buttonDesign={`mt-5 bg-blue font-semibold  ml-2 px-4 py-0 text-white-background text-xs rounded-md mb-3`}
+                buttonDesign={`mt-5 bg-blue font-semiboldtransition ease-in duration-150   ml-2 px-4 py-0 text-white-background text-xs rounded-md mb-3`}
                 progressDesign={`ml-16 h-4 bg-lightBlue rounded-lg bg-transparent mb-3 w-28`}
                 onClicked={completedButton}
-                boxDesign="w-60 shadow-lightBlue w-custom4  ml-20 "
+                boxDesign="  shadow-lightBlue w-custom4  ml-20 "
+                textColor={`darkGreen`}
+                addDescription={true}
+              />
+
+              <CauseBox
+                addbutton={true}
+                addProgress={true}
+                buttonText="completed"
+                image={program2}
+                message=" This is a Nature fund program to help the and save animal life , 
+                 and provide enough food for the poor animals in zoos"
+                progressAmount="2000/10000" // dynamic
+                progressValue={100}
+                title="Nature relieve funds"
+                buttonDesign={`mt-5 bg-blue font-semibold transition ease-in duration-150  ml-2 px-4 py-0 text-white-background text-xs rounded-md mb-3`}
+                progressDesign={`ml-16 h-4 rounded-lg bg-transparent mb-3 w-28`}
+                onClicked={progressButton}
+                boxDesign=" w-custom4 shadow-lightBlue "
+                textColor={`darkGreen`}
+                addDescription={true}
+              />
+
+              <CauseBox
+                addbutton={true}
+                addProgress={true}
+                buttonText="completed"
+                image={program3}
+                message=" Help us fight feed thousands of people in poverty, homeless
+                  people and provide medical care for the poor"
+                progressAmount="13000/15000" // dynamic
+                progressValue={100}
+                title="Health care program"
+                buttonDesign={`mt-5 bg-blue font-semibold transition ease-in duration-150  ml-2 px-4 py-0 text-white-background text-xs rounded-md mb-3`}
+                progressDesign={`ml-16 h-4 rounded-lg bg-transparent mb-3 w-28`}
+                onClicked={progressButton}
+                boxDesign=" w-custom4 shadow-lightBlue  "
+                textColor={`darkGreen`}
+                addDescription={true}
+              />
+
+              <CauseBox
+                addbutton={true}
+                addProgress={true}
+                buttonText="completed"
+                image={program4}
+                message=" Help us fight feed thousands of children in poverty, 
+                  provide education and food for them "
+                progressAmount="6500/7000" // dynamic
+                progressValue={100}
+                title="Children care program"
+                buttonDesign={`mt-5 bg-blue font-semibold transition ease-in duration-150  ml-2 px-4 py-0 text-white-background text-xs rounded-md mb-3`}
+                progressDesign={`ml-16 h-4 rounded-lg bg-transparent mb-3 w-28`}
+                onClicked={progressButton}
+                boxDesign="  w-custom4 shadow-lightBlue  "
                 textColor={`darkGreen`}
                 addDescription={true}
               />
