@@ -12,11 +12,11 @@ const ProfilePage = () => {
   return (
     <div>
       <Layout>
-        <div className="flex  w-custom3 container    ml-24 h-fullPage text-light-green ">
+        <div className=" mb-16   ml-14 text-light-green ">
           <div>
-            <div className="    w-custom3 flex  ">
-              <p className="text-4xl   font-bold    mt-7">My Profile</p>
-              <div className="flex  ml-96 ">
+            <div className="   flex   ">
+              <p className="text-4xl  font-bold   mt-7">My Profile</p>
+              <div className="flex  ml-custom6 ">
                 {/* <Image
                   src={moneyBag}
                   height="30px"

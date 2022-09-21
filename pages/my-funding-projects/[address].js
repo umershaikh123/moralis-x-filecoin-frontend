@@ -3,7 +3,9 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import Image from 'next/image';
 import program1 from '../../assest/program1.png';
+import styles from '../../styles/Home.module.css';
 import CauseBox from '../../components/causeBox';
+import Footer from '../../components/footer';
 // import Modal from '../../components/modalComponent';
 import { useRouter } from 'next/router';
 const MyfundingProjects = () => {
@@ -16,12 +18,12 @@ const MyfundingProjects = () => {
   };
 
   return (
-    <div>
+    <div className=" ">
       <Layout>
-        <div className="flex m-14">
+        <div className="flex ml-16 mt-16  ">
           <div className="text-3xl font-bold   ">My Funding projects</div>
           <button
-            className="bg-light-green px-4 py-1 text-black-background ml-custom rounded-md h-fit items-end justify-end font-bold text-xl hover:scale-110 transition ease-in duration-150"
+            className="bg-light-green px-4 py-1 text-black-background ml-custom6 rounded-md h-fit items-end justify-end font-bold text-xl hover:scale-110 transition ease-in duration-150"
             // className="bg-light-green px-4 py-1 text-black-background rounded-md h-fit font-bold text-xl "
             // onClick={() => setShowModal(true)}
             onClick={CreateNewProgram}
@@ -67,6 +69,7 @@ const MyfundingProjects = () => {
           </div>
         </div>   */}
       </Layout>
+      <Footer />
     </div>
   );
 };

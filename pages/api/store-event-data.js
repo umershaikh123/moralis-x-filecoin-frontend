@@ -17,7 +17,7 @@ async function storeEventData(req, res) {
   try {
     const files = await makeFileObjects(body);
     const cid = await storeFiles(files);
-    console.log(' 3 ');
+
     return res.status(200).json({ success: true, cid: cid });
   } catch (err) {
     return res

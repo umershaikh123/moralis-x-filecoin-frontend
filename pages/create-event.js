@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 // import Link from 'next/link';
-// import getRandomImage from '../utils/getRandomImage';
+import getRandomImage from '../../utils/getRandomImage';
 
 import donate from '../assest/donateMoney.png';
 
@@ -21,11 +21,11 @@ export default function CreateEvent() {
       name: eventName,
       description: eventDescription,
       link: eventLink,
-      image: donate
+      image: getRandomImage()
     };
 
     try {
-      const response = await fetch('/store-event-data', {
+      const response = await fetch('/api/store-event-data', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)

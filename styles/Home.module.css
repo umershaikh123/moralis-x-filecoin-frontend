@@ -89,13 +89,20 @@
 .home {
   background-color: #141313;
  color: #13DA92;
- height: 100vh;
+ 
+}
+
+.funding {
+  background-color: #141313;
+ color: #13DA92;
+ 
+ 
 }
 
 .NewProgram {
   background-color: #141313;
  color: #13DA92;
- height: 170vh;
+ 
  
  
 }

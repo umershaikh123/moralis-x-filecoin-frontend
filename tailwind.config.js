@@ -82,7 +82,8 @@ module.exports = {
         form6: '21.5rem',
         form7: '20rem',
         form8: '21rem',
-        form9: '22rem'
+        form9: '22rem',
+        custom6: '28rem'
       },
       height: {
         fullPage: '140vh',

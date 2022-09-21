@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   const router = useRouter();
 
   const notClicked =
-    'bg-green-600 hover:bg-green-800 rounded-lg pr-16 pb-1 pt-1 pl-6 mb-4 font-bold text-left';
+    'bg-green-600 hover:bg-green-800 rounded-lg pr-16  pb-1 pt-1 pl-6 mb-4 font-bold text-left';
 
   const onClickedOn =
     'bg-light-green text-black-background rounded-lg pr-16 pb-1 pt-1 pl-6  mb-4   font-bold text-left ';
@@ -39,12 +39,12 @@ const Layout = ({ children }) => {
   });
 
   return (
-    <div className="bg-black-background text-light-green ">
+    <div className="bg-black-background min-h-screen text-light-green ">
       <Navbar />
       <hr className="h-1 rounded-lg w-full bg-light-green " />
       <div className="flex ml-6 ">
-        <div className="flex w-80   border-r-4 border-light-green">
-          <div className="flex flex-col mt-10 ml-5 h-screen">
+        <div className="flex w-80   border-r-4 min-h-screen  border-light-green">
+          <div className="flex flex-col  mt-10 ml-5  ">
             <button
               className={currentPage === 0 ? onClickedOn : notClicked}
               onClick={_profilepage}

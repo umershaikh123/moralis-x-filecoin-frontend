@@ -62,16 +62,16 @@ const FundingProgram = () => {
   };
 
   return (
-    <div className={styles.home}>
+    <div className={styles.homes}>
       <Layout>
-        <div className="w-full ">
+        <div className=" ">
           <div className="mt-10 flex">
             <p className="text-light-green font-bold ml-24 text-3xl   ">
               Funding programs
             </p>
             <button
               onClick={CreateNewProgram}
-              className="bg-light-green px-4   text-black-background ml-custom rounded-md   font-bold text-xl hover:scale-110 transition ease-in duration-150"
+              className="bg-light-green px-4   text-black-background ml-custom6 rounded-md   font-bold text-xl hover:scale-110 transition ease-in duration-150"
             >
               Create new program
             </button>
