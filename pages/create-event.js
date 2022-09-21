@@ -4,7 +4,9 @@ import Head from 'next/head';
 import getRandomImage from '../../utils/getRandomImage';
 
 import donate from '../assest/donateMoney.png';
+import { Web3Storage, File, getFilesFromPath } from 'web3.storage';
 
+const { resolve } = require('path');
 export default function CreateEvent() {
   const [eventName, setEventName] = useState('');
   const [eventDate, setEventDate] = useState('');
@@ -21,30 +23,79 @@ export default function CreateEvent() {
       name: eventName,
       description: eventDescription,
       link: eventLink,
-      image: getRandomImage()
+      image: donate
     };
 
-    try {
-      const response = await fetch('/api/store-event-data', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
+    async function storeEventData() {
+      try {
+        const files = await makeFileObjects(body);
+        const cid = await storeFiles(files);
 
-      if (response.status !== 200) {
-        // alert('Oops! Something went wrong. Please refresh and try again.');
-        console.log(' ERROR response.status !== 200 ');
-      } else {
-        console.log('Form successfully submitted!');
-        let responseJSON = await response.json();
-        console.log(responseJSON.cid);
-        console.log('Responce ', responseJSON);
-        // await createEvent(responseJSON.cid);
+        return json({ success: true, cid: cid });
+      } catch (err) {
+        return res
+          .status(500)
+          .json({ error: 'Error creating event', success: false });
       }
-    } catch (error) {
-      alert(`  Error ${error}`);
     }
-    console.log('submitted');
+
+    async function makeFileObjects(body) {
+      const buffer = Buffer.from(JSON.stringify(body));
+
+      // const imageDirectory = resolve(
+      //   process.cwd(),
+      //   `public/images/${body.image}`
+      // );
+      // const files = await getFilesFromPath(imageDirectory);
+
+      const files = files.push(new File([buffer], 'data.json'));
+      return files;
+    }
+
+    function makeStorageClient() {
+      return new Web3Storage({ token: process.env.WEB3STORAGE_TOKEN });
+    }
+
+    async function storeFiles(files) {
+      const client = makeStorageClient();
+      const cid = await client.put(files);
+      return cid;
+    }
+
+    // try {
+    //   try {
+    //     const response = await storeEventData();
+    //   } catch (error) {
+    //     console.log(' ERROR response.status !== 200 ');
+    //   }
+
+    //   console.log('Form successfully submitted!');
+    //   let responseJSON = await response.json();
+    //   console.log(responseJSON.cid);
+    //   console.log('Responce ', responseJSON);
+    //   // await createEvent(responseJSON.cid);
+    // } catch (error) {
+    //   alert(`  Error ${error}`);
+    // }
+    // console.log('submitted');
+
+    try {
+      const response = await storeEventData();
+
+      // if (response.status !== 200) {
+      //   alert('Oops! Something went wrong. Please refresh and try again.');
+      // } else {
+      console.log('Form successfully submitted!');
+      let responseJSON = await response.json();
+      console.log('WEB3 STORAGE : cid ', responseJSON.cid);
+      // await createProgram(responseJSON.cid);
+      // }
+      // check response, if success is false, dont take them to success page
+    } catch (error) {
+      alert(
+        `Oops! Something went wrong. Please refresh and try again. Error ${error}`
+      );
+    }
   }
 
   // const createEvent = async cid => {
