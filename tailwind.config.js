@@ -71,7 +71,8 @@ module.exports = {
         custom4: '18rem',
         custom5: '100%',
         custom6: '40rem',
-        custom7: '20rem'
+        custom7: '20rem',
+        custom8: '26rem'
       },
       margin: {
         custom: '36rem',
@@ -85,6 +86,7 @@ module.exports = {
         form7: '20rem',
         form8: '21rem',
         form9: '22rem',
+        form10: '10rem',
         custom6: '28rem'
       },
       height: {

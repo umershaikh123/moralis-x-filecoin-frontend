@@ -1,74 +1,74 @@
-import React, {useState} from "react";
-import CauseBox from "./causeBox";
-import {FaThumbsUp, FaThumbsDown} from "react-icons/fa"
-import program1 from "../assest/program1.png"
-
-
-export default function VoteModal({showModal, setShowModal}) {
- 
+import React, { useState } from 'react';
+import CauseBox from './causeBox';
+import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
+import program1 from '../assest/program1.png';
+import styles from '../styles/Home.module.css';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
+export default function VoteModal({ showModal, setShowModal }) {
   return (
     <>
       {showModal ? (
         <>
-          <div
-            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-          >
-            <div className="relative w-auto my-6 mx-auto max-w-sm">
-             
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-           
-                <div className="flex items-start justify-between rounded-t">
-                  <h3 className="text-2xl text-orange-500 ml-32 mt-5 mb-3 font-semibold">
-                    Voting
-                  </h3>
+          <div className="justify-center items-center   flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+            <div className="relative w-custom8 my-6  max-w-sm  ">
+              <div className="border-0 rounded-lg bg-DarkBlack p-4 shadow-lg relative flex flex-col w-full bg-black-background outline-none focus:outline-none">
+                <div className="flex  items-center justify-start  ">
                   <button
-                    className="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setShowModal(false)}
-                  >
-                    <span className="bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
-                      ×
-                    </span>
-                  </button>
-                </div>
-                {/*body*/}
-                <div className="flex-auto">
-                 <div>
-                 <p className=" text-slate-500 pl-4 pr-4 text-sm leading-relaxed">
-                  Please be careful in voting. press accept if it the program seems original or press reject if it is a scam
-                  </p>
-                 </div>
-                 <p className="font-semibold mt-2 ml-20 ">Program</p>
-                 <div>
-                    <CauseBox
-                    addProgress={false}
-                    addbutton={false}
-                    image={program1}
-                    boxDesign="w-60 mt-2"
-                    message="Help us fight feed thousands of people in poverty , homeless poeple and provide medical care for the poor"
-                    />
-                 </div>
-                 <div className="flex p-1 ml-10 mt-5">
-                  <button className="flex bg-green-500 rounded-lg p-1 mr-4">
-                    <FaThumbsUp className="ml-1 mr-1 " size={20}/>
-                    <p className="text-white font-semibold">Accept</p>
-                  </button>
-                  <button className="flex bg-red-500 rounded-lg p-1" >
-                    <FaThumbsDown className="ml-1 mr-1 mt-1" size={20}/>
-                    <p className="text-white font-semibold">Reject</p>
-                  </button>
-                  </div>
-                </div>
-                {/*footer*/}
-                <div className="flex items-center justify-end rounded-b">
-                  <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 
-                     text-sm outline-none  focus:outline-none mr-1 mb-3 ease-linear transition-all duration-150"
+                    className="bg-light-green text-black-background font-bold outline-none focus:outline-none px-6  rounded-md
+                     text-md  mr-1 mb-3 hover:scale-110 transition ease-in duration-150"
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
                     Close
                   </button>
-                 
+                </div>
+                <div className="flex items-center  justify-between rounded-t">
+                  <h3 className="text-3xl ml-36 text-lightOrange  mb-3 font-semibold">
+                    Voting
+                  </h3>
+                </div>
+                {/*body*/}
+                <div className="flex-auto">
+                  <div>
+                    <p className=" text-light-green pl-4 pr-4 text-md font-semibold leading-relaxed">
+                      Please be careful in voting. press accept if it the
+                      program seems original or press reject if it is a scam
+                    </p>
+                  </div>
+                  <div className="  mx-auto w-24 mt-6  rounded-md items-center justify-center">
+                    {/* <p className="font-bold  bg-orange py-1 rounded-md  text-center  text-DarkBlack">
+                      Program
+                    </p> */}
+                  </div>
+                  <div className=" ">
+                    <CauseBox
+                      addProgress={false}
+                      addbutton={false}
+                      image={program1}
+                      boxDesign="w-60 ml-16 shadow-orange  "
+                      message="Help us fight feed thousands of people in poverty , homeless poeple and provide medical care for the poor"
+                    />
+                  </div>
+                  <div className="flex p-1 ml-24 mt-5">
+                    <button className="flex bg-darkGreen  rounded-lg p-2 mr-6 hover:scale-110 transition ease-in duration-150">
+                      <FaThumbsUp
+                        className="ml-1 mr-1  text-white-background"
+                        size={20}
+                      />
+                      <p className=" text-white-background font-semibold">
+                        Accept
+                      </p>
+                    </button>
+                    <button className="flex bg-lightRed  rounded-lg p-2 hover:scale-110 transition ease-in duration-150">
+                      <FaThumbsDown
+                        className="ml-1 mr-1 mt-1 text-white-background"
+                        size={20}
+                      />
+                      <p className="text-white-background font-semibold">
+                        Reject
+                      </p>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -79,3 +79,12 @@ export default function VoteModal({showModal, setShowModal}) {
     </>
   );
 }
+
+/* <button
+                  className="p-1   bg-transparent border-0    text-3xl leading-none font-semibold outline-none focus:outline-none"
+                  onClick={() => setShowModal(false)}
+                >
+                  <span className="bg-transparent text-light-green  w-6 text-2xl  outline-none focus:outline-none">
+                    <AiOutlineCloseCircle />
+                  </span>
+                </button> */

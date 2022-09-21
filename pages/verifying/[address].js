@@ -39,15 +39,27 @@ import { BsClockFill } from 'react-icons/bs';
 import { MdCheckCircle } from 'react-icons/md';
 
 const Verifypage = () => {
+  const [showModal, setShowModal] = useState(false);
+  let [opacity, setOpacity] = useState(0);
+
   const router = useRouter();
   const _fundingPage = () => {
     router.push('/funding-programs'); // Make this Dynamic
     console.log('back button pressed ');
   };
+
+  if (showModal == true) {
+    opacity = 10;
+  } else {
+    opacity = 100;
+  }
+
   return (
     <div className="bg-black-background   flex  w-custom5   text-light-green ">
+      <VoteModal setShowModal={setShowModal} showModal={showModal} />
       {/* Left side */}
-      <div className="flex flex-col w-6/12 ml-16   ">
+
+      <div className={`flex flex-col w-6/12 ml-16  opacity-${opacity}`}>
         <button
           onClick={_fundingPage}
           className="px-4 py-2 rounded-lg max-w-button  mt-6 font-bold  bg-Text-green  text-DarkBlack hover:scale-110  transition ease-in duration-150  "
@@ -133,7 +145,9 @@ const Verifypage = () => {
       </div>
 
       {/* Right side */}
-      <div className="flex flex-col w-6/12 text-light-green rounded-xl justify-end items-end mt-8 mr-40 mt-12  ">
+      <div
+        className={`flex flex-col w-6/12 text-light-green rounded-xl justify-end items-end mt-8 mr-40 mt-12  opacity-${opacity}`}
+      >
         <CauseBox
           image={program1L}
           message=" Help us fight feed thousands of people in poverty, homeless
@@ -150,7 +164,10 @@ const Verifypage = () => {
         />
 
         <div className="mr-16 mt-6  ">
-          <button className="px-10 py-2 mb-6 ml-24 rounded-md   font-bold  bg-lightOrange text-DarkBlack hover:scale-110  transition ease-in duration-150  ">
+          <button
+            onClick={() => setShowModal(true)}
+            className="px-10 py-2 mb-6 ml-24 rounded-md   font-bold  bg-lightOrange text-DarkBlack hover:scale-110  transition ease-in duration-150  "
+          >
             Vote
           </button>
 
