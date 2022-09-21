@@ -64,40 +64,40 @@ function CreateNewProgram({ Program }) {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const body = {
-      Name: programName,
-      cause: Cause,
-      Description: description,
-      image: Image,
-      video: Video,
-      twitter: twitter,
-      facebook: facebook,
-      website: Website,
-      fundGoal: FundGoal
-    };
+    const Upload = async () => {
+      const body = {
+        Name: programName,
+        cause: Cause,
+        Description: description,
+        image: Image,
+        video: Video,
+        twitter: twitter,
+        facebook: facebook,
+        website: Website,
+        fundGoal: FundGoal
+      };
 
-    try {
-      const response = await fetch('/api/store-event-data', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
+      const client = new Web3Storage({
+        token: process.env.WEB3STORAGE_TOKEN
       });
 
-      if (response.status !== 200) {
-        alert('Oops! Something went wrong. Please refresh and try again.');
-      } else {
-        console.log('Form successfully submitted!');
-        let responseJSON = await response.json();
-        console.log('WEB3 STORAGE : cid ', responseJSON.cid);
-        // await createProgram(responseJSON.cid);
-      }
-      // check response, if success is false, dont take them to success page
-    } catch (error) {
-      alert(
-        `Oops! Something went wrong. Please refresh and try again. Error ${error}`
-      );
-    }
+      const files = await makeFileObjects(body);
 
+      async function makeFileObjects(body) {
+        const buffer = Buffer.from(JSON.stringify(body));
+        const files = new File([buffer], 'data.json');
+        return files;
+      }
+
+      const cid = await client.put([files]);
+      console.log(files);
+
+      console.log('stored files with cid:', cid);
+      return cid;
+    };
+
+    const cid = await Upload();
+    await createProgram(cid);
     await storeExampleNFT();
   }
 
@@ -165,6 +165,9 @@ function CreateNewProgram({ Program }) {
 
         setLoading(true);
         console.log('waiting...', txn.hash);
+        let wait = await txn.wait();
+
+        seteventID(wait.events[0].args[0]);
         setSuccess(true);
         setLoading(false);
         setMessage('Your NFT uri has been stored successfully.');
@@ -210,44 +213,6 @@ function CreateNewProgram({ Program }) {
       console.log(error);
     }
   };
-
-  // const createEvent = async cid => {
-  //   try {
-  //     const rsvpContract = connectContract();
-
-  //     if (rsvpContract) {
-  //       let deposit = ethers.utils.parseEther(refund);
-  //       let eventDateAndTime = new Date(`${eventDate} ${eventTime}`);
-  //       let eventTimestamp = eventDateAndTime.getTime();
-  //       let eventDataCID = cid;
-
-  //       const txn = await rsvpContract.createNewEvent(
-  //         eventTimestamp,
-  //         deposit,
-  //         maxCapacity,
-  //         eventDataCID,
-  //         { gasLimit: 900000 }
-  //       );
-  //       setLoading(true);
-  //       console.log('Minting...', txn.hash);
-  //       let wait = await txn.wait();
-  //       console.log('Minted -- ', txn.hash);
-
-  //       setEventID(wait.events[0].args[0]);
-
-  //       setSuccess(true);
-  //       setLoading(false);
-  //       setMessage('Your event has been created successfully.');
-  //     } else {
-  //       console.log('Error getting contract.');
-  //     }
-  //   } catch (error) {
-  //     setSuccess(false);
-  //     setMessage(`There was an error creating your event: ${error.message}`);
-  //     setLoading(false);
-  //     console.log(error);
-  //   }
-  // };
 
   return (
     <div className={styles.NewProgram}>
@@ -362,22 +327,6 @@ function CreateNewProgram({ Program }) {
               </div>
             </div>
 
-            {/* 4 section */}
-            {/* <div className="flex mt-4 ">
-            <h1 className=" text-lg font-light text-light-green ml-24  mb-12">
-              Upload NFT
-            </h1>
-
-            <div className="flex ">
-              <input
-                className="ml-form4 h-9 w-96 shadow-md rounded-lg bg-form text-center border-2 "
-                id="NFT"
-                accept="image/*"
-                type="file"
-              />
-            </div>
-          </div> */}
-
             {/* 5 section */}
             <div className="flex mt-4 ">
               <h1 className=" text-lg font-light text-light-green ml-24  mb-12">
@@ -448,7 +397,7 @@ function CreateNewProgram({ Program }) {
               </div>
             </div>
 
-            {/* 8 section */}
+            {/* 9 section */}
             <div className="flex mt-4 ">
               <h1 className=" text-lg font-light text-light-green ml-24  mb-12">
                 Fund goal

@@ -15,87 +15,39 @@ export default function CreateEvent() {
   const [refund, setRefund] = useState('');
   const [eventLink, setEventLink] = useState('');
   const [eventDescription, setEventDescription] = useState('');
+  // ({ token: process.env.WEB3STORAGE_TOKEN });
 
   async function handleSubmit(e) {
     e.preventDefault();
+    const Upload = async () => {
+      const body = {
+        name: eventName,
+        description: eventDescription,
+        link: eventLink,
+        image: donate
+      };
 
-    const body = {
-      name: eventName,
-      description: eventDescription,
-      link: eventLink,
-      image: donate
-    };
+      const client = new Web3Storage({
+        token:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDJBNDRGRTdiMGU5MzhFNzVGNDg3QTU0MzBFZEQzNDRkMjgxNkMyYjQiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NjM2NTk0MTUzNjYsIm5hbWUiOiJtb3JhbGlzIGhhY2thdGhvbiJ9.B-l87X3hMdRAGhs5xPze9Faq7w70y-OsBwVdi-PP2Qo'
+      });
 
-    async function storeEventData() {
-      try {
-        const files = await makeFileObjects(body);
-        const cid = await storeFiles(files);
+      // const files = await makeFileObjects(body);
 
-        return json({ success: true, cid: cid });
-      } catch (err) {
-        return res
-          .status(500)
-          .json({ error: 'Error creating event', success: false });
+      const files = await makeFileObjects(body);
+
+      async function makeFileObjects(body) {
+        const buffer = Buffer.from(JSON.stringify(body));
+        const files = new File([buffer], 'data.json');
+        return files;
       }
-    }
 
-    async function makeFileObjects(body) {
-      const buffer = Buffer.from(JSON.stringify(body));
+      const cid = await client.put([files]);
+      console.log(files);
 
-      // const imageDirectory = resolve(
-      //   process.cwd(),
-      //   `public/images/${body.image}`
-      // );
-      // const files = await getFilesFromPath(imageDirectory);
-
-      const files = files.push(new File([buffer], 'data.json'));
-      return files;
-    }
-
-    function makeStorageClient() {
-      return new Web3Storage({ token: process.env.WEB3STORAGE_TOKEN });
-    }
-
-    async function storeFiles(files) {
-      const client = makeStorageClient();
-      const cid = await client.put(files);
-      return cid;
-    }
-
-    // try {
-    //   try {
-    //     const response = await storeEventData();
-    //   } catch (error) {
-    //     console.log(' ERROR response.status !== 200 ');
-    //   }
-
-    //   console.log('Form successfully submitted!');
-    //   let responseJSON = await response.json();
-    //   console.log(responseJSON.cid);
-    //   console.log('Responce ', responseJSON);
-    //   // await createEvent(responseJSON.cid);
-    // } catch (error) {
-    //   alert(`  Error ${error}`);
-    // }
-    // console.log('submitted');
-
-    try {
-      const response = await storeEventData();
-
-      // if (response.status !== 200) {
-      //   alert('Oops! Something went wrong. Please refresh and try again.');
-      // } else {
-      console.log('Form successfully submitted!');
-      let responseJSON = await response.json();
-      console.log('WEB3 STORAGE : cid ', responseJSON.cid);
-      // await createProgram(responseJSON.cid);
-      // }
-      // check response, if success is false, dont take them to success page
-    } catch (error) {
-      alert(
-        `Oops! Something went wrong. Please refresh and try again. Error ${error}`
-      );
-    }
+      console.log('stored files with cid:', cid);
+    };
+    Upload();
   }
 
   // const createEvent = async cid => {
