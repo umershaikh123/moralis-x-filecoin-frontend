@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import moneyBag from '../../assest/moneyBag.png';
 import cryptodonate from '../../assest/crytodonate.png';
 import program1 from '../../assest/program1.png';
+import program2 from '../../assest/p2.png';
+import program3 from '../../assest/p3.png';
 import nft1 from '../../assest/image10.png';
 import nft2 from '../../assest/image8.png';
 import nft3 from '../../assest/image9.png';
@@ -81,20 +83,51 @@ const ProfilePage = () => {
                 <p className="text-2xl  font-bold   mt-12 ">Donated programs</p>
               </div>
 
-              <CauseBox
-                buttonText="Donate"
-                image={program1}
-                message=" Help us fight feed thousands of people in poverty, homeless
+              <div className="flex  mx-auto space-x-20 flex-wrap      ">
+                <CauseBox
+                  buttonText="Donate"
+                  image={program1}
+                  message=" Help us fight feed thousands of people in poverty, homeless
                   people and provide medical care for the poor"
-                progressAmount="500/1000" // dynamic
-                progressValue={50}
-                title="Health care program"
-                buttonDesign={`mt-5 bg-light-green mr-5    px-5 text-DarkBlack font-bold text-xs rounded-md mb-3`}
-                boxDesign="w-56 shadow-green pb-4 ml-3"
-                textColor={`darkGreen`}
-                addDescription={false}
-                // onClicked={} // move to detail page
-              />
+                  progressAmount="500/1000" // dynamic
+                  progressValue={50}
+                  title="Scholar ship program"
+                  buttonDesign={`mt-5 bg-light-green mr-5    px-5 text-DarkBlack font-bold text-xs rounded-md mb-3`}
+                  boxDesign="w-56 shadow-green pb-4 ml-3"
+                  textColor={`darkGreen`}
+                  addDescription={false}
+                />
+
+                <CauseBox
+                  buttonText="Donate"
+                  image={program2}
+                  message=" Help us fight feed thousands of people in poverty, homeless
+                  people and provide medical care for the poor"
+                  progressAmount="500/1000" // dynamic
+                  progressValue={50}
+                  title="nature relieve funds"
+                  buttonDesign={`mt-5 bg-light-green mr-5    px-5 text-DarkBlack font-bold text-xs rounded-md mb-3`}
+                  boxDesign="w-56 shadow-green pb-4 ml-3"
+                  textColor={`darkGreen`}
+                  addDescription={false}
+                  // onClicked={} // move to detail page
+                />
+
+                <CauseBox
+                  buttonText="Donate"
+                  image={program3}
+                  message=" Help us fight feed thousands of people in poverty, homeless
+                  people and provide medical care for the poor"
+                  progressAmount="500/1000" // dynamic
+                  progressValue={50}
+                  title="Health care program"
+                  buttonDesign={`mt-5 bg-light-green mr-5    px-5 text-DarkBlack font-bold text-xs rounded-md mb-3`}
+                  boxDesign="w-56 shadow-green pb-4 ml-3"
+                  textColor={`darkGreen`}
+                  addDescription={false}
+                  // onClicked={} // move to detail page
+                />
+              </div>
             </div>
           </div>
         </div>
