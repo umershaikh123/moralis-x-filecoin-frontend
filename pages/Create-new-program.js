@@ -9,9 +9,9 @@ import { Web3Storage } from 'web3.storage';
 import styles from '../styles/Home.module.css';
 import { useRouter } from 'next/router';
 import Footer from '../components/footer';
-import connectContract from '../../utils/connectContract';
+// import connectContract from '../../utils/connectContract';
 import Alert from '../components/Alert';
-import { NFTStorage, File } from 'nft.storage';
+// import { NFTStorage, File } from 'nft.storage';
 
 const NFT_STORAGE_API_KEY = process.env.NFT_STORAGE_API_KEY;
 const WEB3STORAGE_TOKEN = process.env.WEB3STORAGE_TOKEN;
@@ -85,8 +85,8 @@ function CreateNewProgram() {
     };
 
     const cid = await Upload();
-    await createProgram(cid);
-    await storeExampleNFT();
+    // await createProgram(cid);
+    // await storeExampleNFT();
   }
 
   async function storeExampleNFT() {
