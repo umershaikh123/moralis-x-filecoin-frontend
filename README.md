@@ -8,11 +8,30 @@ npm run dev
 yarn dev
 ```
 
-## Web3 Fundraising Project
-Moralis x Filecoin Hackathon project
-Project url: 
+# Moralis x Filecoin Hackathon project
+## Disclaimer the project is'nt fully completed . We could'nt make the front end dynamic 
+## Smart contract repo : https://github.com/umershaikh123/morlis-x-filecoin-SmartContract
 
-# what is our project about?
+## Project : Web3 Fundraising Project
+ 
+ 
+
+
+## Techonlogies used
+
+  Chainlink Keepers : 
+  <br/>
+  NFT.STORAGE
+  <br/>
+  WEB3.STORAGE
+  <br/>
+  XMTP
+  <br/>
+  POLYGON
+  <br/>
+
+
+## what is our project about?
 
 Our project aims to solve the issue of trust, transparency in the isssuance of funds for charity, fundraising, donations etc.
 <br/>
@@ -28,12 +47,13 @@ the voting is stoped once the no of votes reached their limit.
 
 then  `chainlink keepers` change the state of the program. 
 If the program is verified then it moves to Fund-Raising-State
-but if it failed then the moves to Failed-State
+but if it failed then it moves to Failed-State
 Once the program is in Fund-rasising state the users can finally start donating .
 <br/>
 users can also chat with the organizers using `Xmtp messaging feature` 
 <br/>
 anyone who donates to the cause gets a special `soul-bound nft` made by the organizer of the program.
+<br/>
 There are 3 NFTS . the first one will be given to any users who donate
 , the 2nd and 3rd one will be given to users who donated above a certain amount.These values will be set by the organizer when creating the program
 
