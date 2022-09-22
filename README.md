@@ -186,14 +186,36 @@ The first NFT will be given to all user who donate any amount
 
 ## Complete State
 
+If the program reached its Fund goal then it will be in Complete state.
+<br/>
+<br/>
+The organizer can withdraw all the amount that was raised
+<br/>
+<br/>
+The `chainlink keepers` will then check all the users who donated and mint them soul bound NFTs if they are eligible.
 
+## Failed State
 
+If the program was not verified or people voted against the program then the program will move to Failed State 
+<br/>
+and the organizer fees will be returned
+<br/>
+<br/>
+If the program was in Fund Raising state and it could not reached their goal in a certain time limit lets say 6 months
+then the program will move to failed state . All the users will get their donation refund back and the organizer will get his fees back.
+<br/>
+<br/>
+The logic behind this is that if someone needed 10k$ to raise for his project and he only raised 5K$ then whats the point of 
+5K$ if he needed min 10k$ to do something useful.
+<br/>
+<br/>
+Of course we can still change some of our logic and their is always room for improvement
 
 
  
   ## Team members
   
- Me - umershaikh123 (Project Lead , blockchain dev)
+ Me - umershaikh123 (Project Lead , Web3 dev  )
  <br/>
  0xWick (Node.Js developer)
  <br/>
