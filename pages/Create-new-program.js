@@ -14,6 +14,7 @@ import Alert from '../components/Alert';
 import { NFTStorage, File } from 'nft.storage';
 
 const NFT_STORAGE_API_KEY = process.env.NFT_STORAGE_API_KEY;
+const WEB3STORAGE_TOKEN = process.env.WEB3STORAGE_TOKEN;
 
 function CreateNewProgram() {
   let counter;
@@ -48,8 +49,6 @@ function CreateNewProgram() {
   const [value1, setValue1] = useState('');
   const [value2, setValue2] = useState('');
 
-  // VALUES SHOULD NOT BE GREATER THAN GOAL
-  // VALUE 1 AND VALUE 2
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -67,8 +66,7 @@ function CreateNewProgram() {
       };
 
       const client = new Web3Storage({
-        token:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDJBNDRGRTdiMGU5MzhFNzVGNDg3QTU0MzBFZEQzNDRkMjgxNkMyYjQiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NjM2NTk0MTUzNjYsIm5hbWUiOiJtb3JhbGlzIGhhY2thdGhvbiJ9.B-l87X3hMdRAGhs5xPze9Faq7w70y-OsBwVdi-PP2Qo'
+        token: WEB3STORAGE_TOKEN
       });
 
       const files = await makeFileObjects(body);
