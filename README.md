@@ -2,33 +2,56 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
 npm run dev
 # or
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Web3 Fundraising Project
+Moralis x Filecoin Hackathon project
+Project url: 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+# what is our project about?
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Our project aims to solve the issue of trust, transparency in the isssuance of funds for charity, fundraising, donations etc.
+<br/>
+<br/>
+Organizers/NGOs can create any funding program which they need to raise money.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+After filling necessary information in a form such as program details , cause , fund goal etc 
+the form data is uploaded to `WEB3.STORAGE` and is stored inside smart contract. and so as to discourage unnecessary/scam funding projects Organizers have to pay a 0.05% fee of the total fund goal and each project first gets verified by the user and . User can vote for or against any cause . We are still looking for better voting mechanism and penalty to malicious users .
+<br/>
+<br/>
+The voting is open and can be done by anyone but each wallet can only vote for a cause once, 
+the voting is stoped once the no of votes reached their limit.
 
-## Learn More
+then  `chainlink keepers` change the state of the program. 
+If the program is verified then it moves to Fund-Raising-State
+but if it failed then the moves to Failed-State
+Once the program is in Fund-rasising state the users can finally start donating .
+<br/>
+users can also chat with the organizers using `Xmtp messaging feature` 
+<br/>
+anyone who donates to the cause gets a special `soul-bound nft` made by the organizer of the program.
+There are 3 NFTS . the first one will be given to any users who donate
+, the 2nd and 3rd one will be given to users who donated above a certain amount.These values will be set by the organizer when creating the program
 
-To learn more about Next.js, take a look at the following resources:
+<br/>
+<br/>
+The funding program is closed when the specified goal has been reached.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# plans moving forward
+  * We plan to implement a standard open dao which with each cause as proposals and ways to incentivize users to verify them
+  * we plan to add support for donation of real world asssets or other digital assets
+  
+  ## integrations 
+  * chainlink keepers for automating functions in smart contract - https://github.com/umershaikh123/Moralis-x-Filecoin-Hackathon/blob/master/Backend/Hardhat/contracts/funder.sol
+  * xmtp for messaging - https://github.com/umershaikh123/moralis-x-filecoin-frontend/blob/main/pages/detailPage/%5Baddress%5D.js
+  * web3.storage and NFT.storage to store the users data when a cause is created - https://github.com/umershaikh123/moralis-x-filecoin-frontend/blob/main/pages/Create-new-program.js
+  * Moralis for syncing events from our smart contract
+  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ 
+ 
