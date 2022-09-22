@@ -92,8 +92,11 @@ The funding program is closed when the specified goal has been reached.
   ## Team members
   
  Me - umershaikh123 (Project Lead , blockchain dev)
+ <br/>
  0xWick (Node.Js developer)
+ <br/>
  MFaiqKhan (Researcher and blockchain dev)
+ <br/>
  olic-hub (Front-end-developer)
  
 
