@@ -19,8 +19,7 @@ yarn dev
 
 ## Techonlogies used
 
-  Chainlink Keepers  
-  <br/>
+  Chainlink Keepers   
   NFT.STORAGE
   <br/>
   WEB3.STORAGE
@@ -98,17 +97,20 @@ Depending on certain conditions like voting , fund raising time , No of votes co
 
 
 
-  ### xmtp for messaging -https://github.com/umershaikh123/moralis-x-filecoin-frontend/blob/main/pages/detailPage/%5Baddress%5D.js
+  ### xmtp for messaging 
+      https://github.com/umershaikh123/moralis-x-filecoin-frontend/blob/main/pages/detailPage/%5Baddress%5D.js
   Users can message organizers thorugh XMTP
   
- ### Filecoin , web3.storage and NFT.storage - https://github.com/umershaikh123/moralis-x-filecoin-frontend/blob/main/pages/Create-new-program.js
+ ### Filecoin , web3.storage and NFT.storage 
+     https://github.com/umershaikh123/moralis-x-filecoin-frontend/blob/main/pages/Create-new-program.js
+     
  <br/>
  Web3 Storage : For storing Form data 
  <br/>
  NFT Storage : For Storing NFTS 
  
  ### Moralis for syncing events from our smart contract (Not implemented)
-  
+ ### Polygon for scalibility
   
   ## Team members
   
