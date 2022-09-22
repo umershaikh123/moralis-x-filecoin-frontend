@@ -20,7 +20,7 @@ import { CgWebsite } from 'react-icons/cg';
 import { useRouter } from 'next/router';
 import { Window, useLaunch, useIsOpen, Launcher } from '@relaycc/receiver';
 import styles from '../../styles/Home.module.css';
-const detailPage = () => {
+const DetailPage = () => {
   const launch = useLaunch();
   const isOpen = useIsOpen();
   const router = useRouter();
@@ -156,4 +156,4 @@ const detailPage = () => {
   );
 };
 
-export default detailPage;
+export default DetailPage;
