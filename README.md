@@ -83,10 +83,31 @@ The funding program is closed when the specified goal has been reached.
   
   
   ## integrations 
-  * chainlink keepers for automating functions in smart contract - https://github.com/umershaikh123/Moralis-x-Filecoin-Hackathon/blob/master/Backend/Hardhat/contracts/funder.sol
-  * xmtp for messaging - https://github.com/umershaikh123/moralis-x-filecoin-frontend/blob/main/pages/detailPage/%5Baddress%5D.js
-  * web3.storage and NFT.storage to store the users data when a cause is created - https://github.com/umershaikh123/moralis-x-filecoin-frontend/blob/main/pages/Create-new-program.js
-  * Moralis for syncing events from our smart contract
+  ### Chainlink keepers for automating functions in smart contract
+      https://github.com/umershaikh123/morlis-x-filecoin-SmartContract/blob/main/contracts/Main.sol
+
+Chainlink Keepers are used to change the state of the program.
+<br/>
+<br/>
+Each program have 4 states . 
+Verifying state , Fund Raising State , Complete State and Failed State
+<br/>
+<br/>
+Depending on certain conditions like voting , fund raising time , No of votes completed , Fund Goal completed
+<br/>
+
+
+
+  ### xmtp for messaging -https://github.com/umershaikh123/moralis-x-filecoin-frontend/blob/main/pages/detailPage/%5Baddress%5D.js
+  Users can message organizers thorugh XMTP
+  
+ ### Filecoin , web3.storage and NFT.storage - https://github.com/umershaikh123/moralis-x-filecoin-frontend/blob/main/pages/Create-new-program.js
+ <br/>
+ Web3 Storage : For storing Form data 
+ <br/>
+ NFT Storage : For Storing NFTS 
+ 
+ ### Moralis for syncing events from our smart contract (Not implemented)
   
   
   ## Team members
