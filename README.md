@@ -9,15 +9,25 @@ yarn dev
 ```
 
 # Moralis x Filecoin Hackathon project
-## Disclaimer the project is'nt fully completed . We could'nt make the front end dynamic 
+
+<br/>
+ 
+
+## Project : Web3 Fundraising Project
+
+ 
+<br/>
+
+### Disclaimer the project is'nt fully completed . We could'nt make the front end dynamic and it is not responsive
 
 <br/>
 
-## Smart contract repo : https://github.com/umershaikh123/morlis-x-filecoin-SmartContract
+### Smart contract repo : https://github.com/umershaikh123/morlis-x-filecoin-SmartContract
+
 <br/>
 
 ## Designs : https://www.figma.com/file/y6DAZMsWFNriJaF4Ol2lP9/Daily-UI---Day-01-(Community)?node-id=792%3A1026
-## Project : Web3 Fundraising Project
+
  
  
 
@@ -34,6 +44,7 @@ yarn dev
   POLYGON
   <br/>
 
+<hr>
 
 ## what is our project about?
 
@@ -78,15 +89,21 @@ There are 3 NFTS . the first one will be given to any users who donate
 <br/>
 The funding program is closed when the specified goal has been reached.
 
+
+
+ 
 # plans moving forward
 
   * Our main goal is to make sure that the money that is raised , is actually spent for the purpose of the program and people can actaully see
     how their donated money is being used.
   * We plan to implement a standard open dao which with each cause as proposals and ways to incentivize users to verify them
   * we plan to add support for donation of real world asssets or other digital assets
-  
-  
-  ## integrations 
+
+
+<br/>
+<hr>  
+
+  # integrations 
   ### Chainlink keepers for automating functions in smart contract
       https://github.com/umershaikh123/morlis-x-filecoin-SmartContract/blob/main/contracts/Main.sol
 
@@ -114,8 +131,9 @@ Depending on certain conditions like voting , fund raising time , No of votes co
  <br/>
  NFT Storage : For Storing NFTS 
  
- ### Moralis for syncing events from our smart contract (Not implemented)
+ ### Moralis for syncing events from our smart contract (Not yet implemented)
  ### Polygon for scalibility
+ 
  <br/>
  <hr>
   
@@ -212,6 +230,7 @@ The logic behind this is that if someone needed 10k$ to raise for his project an
 Of course we can still change some of our logic and their is always room for improvement
 
 
+ <hr>
  
   ## Team members
   
