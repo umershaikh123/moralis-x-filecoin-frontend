@@ -125,7 +125,7 @@ Depending on certain conditions like voting , fund raising time , No of votes co
  <br/>
  MFaiqKhan (Researcher and blockchain dev)
  <br/>
- olic-hub (Front-end-developer)
+ rolic-hub (Front-end-developer)
  
 
 
