@@ -199,28 +199,12 @@
   box-shadow: 1rem 2rem 1rem 2rem rgba(18, 236, 160, 0.9);
   border-radius: 0.5rem;
 
-   /* , 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-}
-
- .blur{
  
- }
-/* @media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
 }
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: rgb(17, 17, 17);
-  }
-  .logo img {
-    filter: invert(1);
-  }
-} */
+ .postion{
+ 
+  margin-left: -4rem;
+ }
+
+ 

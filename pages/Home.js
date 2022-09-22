@@ -11,12 +11,7 @@ import Footer from '../components/footer';
 const HomePage = () => {
   const { disconnect } = useDisconnect();
   const router = useRouter();
-  // const account = useAccount({
-  //   onDisconnect() {
-  //     console.log('Disconnected');
-  //     router.push('/index.js');
-  //   }
-  // });
+
   const mainpageclick = () => {
     router.push('/profile/8'); // DYNAMIC
   };

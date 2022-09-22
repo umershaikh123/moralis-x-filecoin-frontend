@@ -54,6 +54,10 @@ module.exports = {
       lightBlue: '#00C0F4'
     },
     extend: {
+      zIndex: {
+        m: '-1'
+      },
+
       lineHeight: {
         'extra-loose': '3rem'
       },

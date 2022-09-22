@@ -15,7 +15,6 @@ import { NFTStorage, File } from 'nft.storage';
 
 const NFT_STORAGE_API_KEY = process.env.NFT_STORAGE_API_KEY;
 
-// function CreateNewProgram({ Program }) {
 function CreateNewProgram() {
   let counter;
   const router = useRouter();
@@ -99,7 +98,8 @@ function CreateNewProgram() {
       value: 0,
       ProgramName: programName,
       Origin: 'Funder',
-      type: 'Soul Bound'
+      type: 'Soul Bound',
+      description: ' Soul bound Nft as a proof for donation'
     };
 
     const nft2 = {
@@ -108,7 +108,8 @@ function CreateNewProgram() {
       value: value1,
       ProgramName: programName,
       Origin: 'Funder',
-      type: 'Soul Bound'
+      type: 'Soul Bound',
+      description: ' Soul bound Nft as a proof for donation'
     };
 
     const nft3 = {
@@ -117,7 +118,8 @@ function CreateNewProgram() {
       value: value2,
       ProgramName: programName,
       Origin: 'Funder',
-      type: 'Soul Bound'
+      type: 'Soul Bound',
+      description: ' Soul bound Nft as a proof for donation'
     };
 
     const client = new NFTStorage({ token: NFT_STORAGE_API_KEY });
@@ -611,16 +613,3 @@ function CreateNewProgram() {
 }
 
 export default CreateNewProgram;
-
-// export async function getServerSideProps(context) {
-//   const { id } = context.params;
-//   const { data } = await client.query({
-//     // Query event (programCreated) data
-//   });
-
-//   return {
-//     props: {
-//       Program: data.event
-//     }
-//   };
-// }

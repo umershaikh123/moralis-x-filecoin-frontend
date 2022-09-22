@@ -78,7 +78,7 @@ const FundingProgram = () => {
       <Layout>
         <div className=" ">
           <FailedModal setShowModal={setShowModal} showModal={showModal} />
-          {/* <DonateModal setShowModal={setShowModal} showModal={showModal} /> */}
+
           <div className="mt-10 flex">
             <p className="text-light-green font-bold ml-24 text-3xl   ">
               Funding programs

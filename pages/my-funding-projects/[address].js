@@ -27,8 +27,6 @@ const MyfundingProjects = () => {
           <div className="text-3xl font-bold">My Funding projects</div>
           <button
             className="bg-light-green px-4 py-1 text-black-background ml-custom6 rounded-md h-fit items-end justify-end font-bold text-xl hover:scale-110 transition ease-in duration-150"
-            // className="bg-light-green px-4 py-1 text-black-background rounded-md h-fit font-bold text-xl "
-            // onClick={() => setShowModal(true)}
             onClick={CreateNewProgram}
           >
             Create new program

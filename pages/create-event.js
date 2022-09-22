@@ -5,6 +5,7 @@ import getRandomImage from '../../utils/getRandomImage';
 
 import donate from '../assest/donateMoney.png';
 import { Web3Storage, File, getFilesFromPath } from 'web3.storage';
+import { NFTStorage } from 'nft.storage';
 
 const { resolve } = require('path');
 export default function CreateEvent() {
@@ -15,7 +16,44 @@ export default function CreateEvent() {
   const [refund, setRefund] = useState('');
   const [eventLink, setEventLink] = useState('');
   const [eventDescription, setEventDescription] = useState('');
+  const [NFT1, setNFT1] = useState('');
+
   // ({ token: process.env.WEB3STORAGE_TOKEN });
+
+  //   const [dataUri, setDataUri] = useState('')
+
+  //   const onChange = (file) => {
+
+  //     if(!file) {
+  //       setDataUri('');
+  //       return;
+  //     }
+
+  //     fileToDataUri(file)
+  //       .then(dataUri => {
+  //         setDataUri(dataUri)
+  //       })
+
+  // const fileToDataUri = (file) => new Promise((resolve, reject) => {
+  //   const reader = new FileReader();
+  //   reader.onload = (event) => {
+  //     resolve(event.target.result)
+  //   };
+  //   reader.readAsDataURL(file);
+  //   })
+
+  selectFile = () => {
+    let uploadfile = document.getElementById('upload_doc');
+    if (uploadfile) {
+      this.setState({
+        selectedUploadFile: uploadfile.files[0]
+      });
+    }
+  };
+
+  const formData = new FormData();
+  formData.append(NFT1, this.state.selectedFile);
+  this.uploadFile(formData); // here you can use fetch/Axios to send the form data
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -47,49 +85,41 @@ export default function CreateEvent() {
 
       console.log('stored files with cid:', cid);
     };
-    Upload();
+
+    async function storeExampleNFT() {
+      const nft1 = {
+        image: blob,
+        name: 'Title1',
+        value: 0,
+        ProgramName: 'programName',
+        Origin: 'Funder',
+        type: 'Soul Bound',
+        description: 'description about nft'
+      };
+
+      const client = new NFTStorage({
+        token:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDlkODc1Njg4RTY0MkIzNzlkNTg0MDZCNDFDMGE5MjY5ZDdCNGE1ZEUiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY2MzY1OTcxOTUyMCwibmFtZSI6ImhhY2thdGhvbiJ9.wjRxHAGIc7cGCgnqSPrFRlcm4iR3d5_wDYLgTDASu-E'
+      });
+      const metadata1 = await client.store(nft1);
+      // const metadata2 = await client.store(nft2);
+      // const metadata3 = await client.store(nft3);
+
+      console.log('NFT1 data stored!');
+      console.log('Metadata1 URI: ', metadata1.url);
+
+      // console.log('NFT2 data stored!');
+      // console.log('Metadata1 URI: ', metadata2.url);
+
+      // console.log('NFT3 data stored!');
+      // console.log('Metadata1 URI: ', metadata3.url);
+    }
+
+    await Upload();
+    await storeExampleNFT();
   }
 
-  // const createEvent = async cid => {
-  //   try {
-  //     const rsvpContract = connectContract();
-
-  //     if (rsvpContract) {
-  //       let deposit = ethers.utils.parseEther(refund);
-  //       let eventDateAndTime = new Date(`${eventDate} ${eventTime}`);
-  //       let eventTimestamp = eventDateAndTime.getTime();
-  //       let eventDataCID = cid;
-
-  //       const txn = await rsvpContract.createNewEvent(
-  //         eventTimestamp,
-  //         deposit,
-  //         maxCapacity,
-  //         eventDataCID,
-  //         { gasLimit: 900000 }
-  //       );
-  //       setLoading(true);
-  //       console.log('Minting...', txn.hash);
-  //       let wait = await txn.wait();
-  //       console.log('Minted -- ', txn.hash);
-
-  //       setEventID(wait.events[0].args[0]);
-
-  //       setSuccess(true);
-  //       setLoading(false);
-  //       setMessage('Your event has been created successfully.');
-  //     } else {
-  //       console.log('Error getting contract.');
-  //     }
-  //   } catch (error) {
-  //     setSuccess(false);
-  //     setMessage(`There was an error creating your event: ${error.message}`);
-  //     setLoading(false);
-  //     console.log(error);
-  //   }
-  // };
-
   useEffect(() => {
-    // disable scroll on <input> elements of type number
     document.addEventListener('wheel', event => {
       if (document.activeElement.type === 'number') {
         document.activeElement.blur();
@@ -223,6 +253,18 @@ export default function CreateEvent() {
               </div>
             </div>
 
+            <div className="flex ">
+              <input
+                className="ml-32 h-9 w-80 shadow-md rounded-lg bg-form text-center border-2 "
+                id="Backgroud"
+                accept="image/*"
+                type="file"
+                required
+                value={NFT1}
+                onChange={e => setNFT1(e.target.value)}
+              />
+            </div>
+
             <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
               <label
                 htmlFor="event-link"
@@ -267,6 +309,7 @@ export default function CreateEvent() {
               </div>
             </div>
           </div>
+
           <div className="pt-5">
             <div className="flex justify-end">
               <button

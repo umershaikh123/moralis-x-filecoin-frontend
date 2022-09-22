@@ -9,37 +9,16 @@ import p3 from '../../assest/Ellipse10.png';
 import p4 from '../../assest/Ellipse13.png';
 import p5 from '../../assest/Ellipse14.png';
 
-import { BiNotepad } from 'react-icons/bi';
-import VoteModal from '../../components/voteModal';
-import ReactPlayer from 'react-player';
-import {
-  AiFillCheckCircle,
-  AiOutlineTwitter,
-  AiFillCloseSquare
-} from 'react-icons/ai';
-import { IoTimeSharp } from 'react-icons/io5';
-import {
-  BsFillPersonFill,
-  BsFillChatDotsFill,
-  BsFacebook,
-  BsFillQuestionCircleFill
-} from 'react-icons/bs';
+import { BsFillPersonFill, BsFillChatDotsFill } from 'react-icons/bs';
 
 import { RiMoneyDollarCircleFill } from 'react-icons/ri';
-import { FiTarget } from 'react-icons/fi';
-import { GiOnTarget, GiPositionMarker } from 'react-icons/gi';
-import { CgWebsite } from 'react-icons/cg';
+
 import { useRouter } from 'next/router';
-import styles from '../../styles/Home.module.css';
 
-import { HiOutlineClipboardList } from 'react-icons/hi';
-
-import { ImCross } from 'react-icons/im';
-
-import { BsClockFill } from 'react-icons/bs';
-import { MdCheckCircle } from 'react-icons/md';
-
+import { Window, useLaunch, useIsOpen, Launcher } from '@relaycc/receiver';
 const CompletedPage = () => {
+  const launch = useLaunch();
+  const isOpen = useIsOpen();
   const router = useRouter();
   const _fundingPage = () => {
     router.push('/funding-programs'); // Make this Dynamic
@@ -145,7 +124,7 @@ const CompletedPage = () => {
           title="Health care program"
           buttonDesign={`mt-5 bg-blue font-semiboldtransition ease-in duration-150   ml-2 px-4 py-0 text-white-background text-xs rounded-md mb-3`}
           progressDesign={`ml-16 h-4 bg-lightBlue rounded-lg bg-transparent mb-3 w-28`}
-          boxDesign="  shadow-lightBlue pb-5 w-custom4   mr-4"
+          boxDesign="  shadow-lightBlue pb-5 w-custom4   mr-24"
           textColor={`darkGreen`}
           addDescription={true}
         />
@@ -156,12 +135,42 @@ const CompletedPage = () => {
           </button>
 
           <div>
-            <button className="px-10 py-2 mb-6 ml-28 rounded-md   font-bold  bg-light-green text-DarkBlack hover:scale-110  transition ease-in duration-150  ">
+            <button className="px-10 py-2 mb-6 ml-10 rounded-md   font-bold  bg-light-green text-DarkBlack hover:scale-110  transition ease-in duration-150  ">
               Withdraw Funds (only Owner)
             </button>
           </div>
 
-          <div className="flex ml-24  mt-5">
+          <div className="flex mt-5">
+            <BsFillPersonFill size={25} className="mr-4" />
+
+            <h3 className="text-md font-semibold">Address of Organizer: </h3>
+            <span>
+              <a
+                href={`https://mumbai.polygonscan.com/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-3  "
+              >
+                0x31600D5AF12782205F4299
+              </a>
+            </span>
+          </div>
+
+          <div className="flex mt-6">
+            <BsFillChatDotsFill size={25} className="mr-4" />
+            <h3 className="text-md font-semibold">Chat with the Organizer</h3>
+            <button
+              onClick={
+                () => launch('0x31600D5AF12782205F42998b19567B550c1D464e') //address of the organizer
+              }
+              className="px-6 py-1 ml-4 -mt-2 rounded-lg max-w-button   font-bold  bg-Text-green  text-DarkBlack hover:scale-110  transition ease-in duration-150  "
+            >
+              chat
+            </button>
+            <Window />
+          </div>
+
+          <div className="flex mr-24  mt-5">
             <RiMoneyDollarCircleFill size={45} className=" " />
             <p className="text-xl font-semibold mt-2  ml-2">
               Total Funds Raised :{' '}
@@ -169,7 +178,7 @@ const CompletedPage = () => {
             </p>
           </div>
 
-          <div className="h-80"></div>
+          <div className="h-24"></div>
         </div>
       </div>
     </div>
