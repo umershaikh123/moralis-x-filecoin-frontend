@@ -46,7 +46,7 @@ After filling necessary information in a form such as program details , cause , 
 the form data is uploaded to `WEB3.STORAGE` and is stored inside smart contract. 
 <br/>
 <br/>
-As to discourage unnecessary/scam funding projects Organizers have to pay a 0.05% fee of the total fund goal and each project first gets verified by the user and . User can vote for or against any cause .
+As to discourage unnecessary/scam funding projects Organizers have to pay a 0.005 % fee of the total fund goal and each project first gets verified by the user and . User can vote for or against any cause .
 <br/>
 <br/>
 The voting is transparent . anyone can see who voted for or against the program 
@@ -117,6 +117,65 @@ Depending on certain conditions like voting , fund raising time , No of votes co
  ### Moralis for syncing events from our smart contract (Not implemented)
  ### Polygon for scalibility
   
+  
+  
+ ## Detailed project working
+ 
+ In our project we have the organizer of the funding programs and users who can donate , vote (verify) program.
+<br/>
+<br/>
+Firstly an organizer creates a new funding project by clicking the create new program button which opens up a form
+the organizer writes detail of the program and NFTs that will be rewarded to the users .
+<br/>
+<br/>
+The organizer has to pay 0.005 % fee a fraction of fundGoal to create a new funding program. This reduces the chances of scammers trying to create fake programs.
+<br/>
+<br/>
+If the program fails for some reason then the fees will be refunded to the organizer
+<br/>
+<br/>
+
+### verifying stage
+
+Okay now that the organizer has submited the form , payed the fees .
+The program goes in Verifying state. Now the users can vote for or against the program .
+<br/>
+<br/>
+The voting time , No of Votes might be different depending on the FundGoal.
+<br/>
+<br/>
+All the votes are transparent and are shown on the verfying page.
+<br/>
+<br/>
+We implemented a very simple voting system but we can improve it a lot.
+<br/>
+<br/>
+Another approach we thought was that there will be people called 'verifiers' who would stake some Eth/or any coin
+and only they can vote for the program 
+<br/>
+<br/>
+If they voted wrong then their saking coin would be slash but if they are right they will get a reward in our own crypto currency
+<br/>
+<br/>
+Users can see the details of the program by clicking the Cardview of the program , they can chat with the 
+organizer using XMTP messaging
+<br/>
+<br/>
+Now if the program gets reached its voting limit the chainlink keepers will check certain conditons and change the state of the program.
+<br/>
+<br/>
+If the program succeded in verifying it will move to Fund Raising State otherwise it will move to Failed State
+
+
+### Fund Raising stage
+
+Now if the program gets reached its voting limit the chainlink keepers will check certain conditons and change the state of the program.
+<br/>
+<br/>
+If the program succeded in verifying it will move to Fund Raising State otherwise it will move to Failed State
+
+
+ 
   ## Team members
   
  Me - umershaikh123 (Project Lead , blockchain dev)
