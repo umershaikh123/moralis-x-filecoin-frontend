@@ -116,12 +116,18 @@ Depending on certain conditions like voting , fund raising time , No of votes co
  
  ### Moralis for syncing events from our smart contract (Not implemented)
  ### Polygon for scalibility
-  
-  
+ <br/>
+ <hr>
   
  ## Detailed project working
  
- In our project we have the organizer of the funding programs and users who can donate , vote (verify) program.
+In our project we have the organizer of the funding programs and users who can donate , vote (verify) program.
+<br/>
+<br/>
+Each user will have their own profile which will show all the programs that he donated to and all the `soul bound NFTS` he recieved
+<br/>
+<br/>
+Similarly the organizers will also have their own section which will show all the programs that they have created so far
 <br/>
 <br/>
 Firstly an organizer creates a new funding project by clicking the create new program button which opens up a form
@@ -135,7 +141,7 @@ If the program fails for some reason then the fees will be refunded to the organ
 <br/>
 <br/>
 
-### verifying stage
+## verifying stage
 
 Okay now that the organizer has submited the form , payed the fees .
 The program goes in Verifying state. Now the users can vote for or against the program .
@@ -158,21 +164,30 @@ If they voted wrong then their saking coin would be slash but if they are right 
 <br/>
 <br/>
 Users can see the details of the program by clicking the Cardview of the program , they can chat with the 
-organizer using XMTP messaging
+organizer using `XMTP messaging`
 <br/>
 <br/>
-Now if the program gets reached its voting limit the chainlink keepers will check certain conditons and change the state of the program.
-<br/>
-<br/>
-If the program succeded in verifying it will move to Fund Raising State otherwise it will move to Failed State
-
-
-### Fund Raising stage
-
-Now if the program gets reached its voting limit the chainlink keepers will check certain conditons and change the state of the program.
+Now if the program gets reached its voting limit the `chainlink keepers` will check certain conditons and change the state of the program.
 <br/>
 <br/>
 If the program succeded in verifying it will move to Fund Raising State otherwise it will move to Failed State
+
+
+## Fund Raising stage
+
+Now that the program is in the fund raising state . Users can donate Crypto to the organizer of the program.
+all donations are shown on the page
+<br/>
+<br/>
+The users can be rewarded upto 3 `Soul Bound NFT` if they donate at a above a certain value.
+<br/>
+<br/>
+The first NFT will be given to all user who donate any amount
+
+## Complete State
+
+
+
 
 
  
