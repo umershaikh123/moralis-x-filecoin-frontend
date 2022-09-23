@@ -115,6 +115,7 @@ Verifying state , Fund Raising State , Complete State and Failed State
 <br/>
 <br/>
 Depending on certain conditions like voting , fund raising time , No of votes completed , Fund Goal completed
+the chainlink keepers will change the state of the program
 <br/>
 
 
