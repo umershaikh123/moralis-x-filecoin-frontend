@@ -119,8 +119,9 @@ Depending on certain conditions like voting , fund raising time , No of votes co
 
 
 
-  ### xmtp for messaging 
-      https://github.com/umershaikh123/moralis-x-filecoin-frontend/blob/main/pages/detailPage/%5Baddress%5D.js
+  ### xmtp for messaging (Not dynamic)
+      code : https://github.com/umershaikh123/moralis-x-filecoin-frontend/blob/main/pages/detailPage/%5Baddress%5D.js
+      live project : https://moralis-x-filecoin-frontend-fadk.vercel.app/detailPage/1
   Users can message organizers thorugh XMTP
   
  ### Filecoin , web3.storage and NFT.storage 
@@ -132,6 +133,9 @@ Depending on certain conditions like voting , fund raising time , No of votes co
  NFT Storage : For Storing NFTS 
  
  ### Moralis for syncing events from our smart contract (Not yet implemented)
+ 
+ <br/>
+ 
  ### Polygon for scalibility
  
  <br/>
