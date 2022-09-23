@@ -234,15 +234,38 @@ Of course we can still change some of our logic and their is always room for imp
  
   ## Team members
   
- Me - umershaikh123 (Project Lead , Web3 dev  )
- <br/>
- 0xWick (Node.Js developer)
- <br/>
- MFaiqKhan (Researcher and blockchain dev)
- <br/>
- olic-hub (Front-end-developer)
+ Me - umershaikh123 (Project Lead )
  
-
+ * Desribed the technical working of the project 
+ * Made all the designs from scratch
+ * Wrote the entire smart Contract , added chainlink keepers logic , NFT mint logic , soul bound NFT contract.
+ * Fix errors in smart Contract
+ * Used Web3.Storage on Front end
+ * Used NFT.Storage on Front end
+ * Fix and Polished the front end code.
+ 
+ 
+ <br/>
+ 
+ rolic-hub (Front-end-developer)
+ * Made the front end code and logic
+ * Provided great ideas for the hackathon
+ * implemented XMTP
+ 
+ <br/>
+ 
+ 0xWick (Back-end developer)
+ * synced Moralis smart contracts
+ * helped in WEB3.STORAGE , NFT.STORAGE Implementation
+ * handled moralis , api logic
+ 
+ 
+ 
+ <br/>
+ 
+ M.FaiqKhan (Researcher and blockchain dev)
+* Helped in adding Soul bound contract logic
+* provided ideas for technical working of the project
 
  
  
