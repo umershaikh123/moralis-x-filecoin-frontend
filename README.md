@@ -254,13 +254,11 @@ Of course we can still change some of our logic and their is always room for imp
  
  rolic-hub (Front-end-developer)
  * Made the front end code and logic
- * Provided great ideas for the hackathon
  * implemented XMTP
  
  <br/>
  
  0xWick (Back-end developer)
- * synced Moralis smart contracts
  * helped in WEB3.STORAGE , NFT.STORAGE Implementation
  * handled moralis , api logic
  
