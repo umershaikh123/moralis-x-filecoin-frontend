@@ -269,8 +269,7 @@ Of course we can still change some of our logic and their is always room for imp
  <br/>
  
  M.FaiqKhan (Researcher and blockchain dev)
-* Helped in adding Soul bound contract logic
-* provided ideas for technical working of the project
+
 
  
  
