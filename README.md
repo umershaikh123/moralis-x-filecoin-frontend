@@ -242,12 +242,15 @@ Of course we can still change some of our logic and their is always room for imp
  Me - umershaikh123 (Project Lead )
  
  * Desribed the technical working of the project 
- * Made all the designs from scratch
- * Wrote the entire smart Contract , added chainlink keepers logic , NFT mint logic , soul bound NFT contract.
+ * Made all the designs from scratch (link above )
+ * Wrote the entire complete smart Contract from scratch
+ * Added chainlink keepers logic
+ * NFT mint logic
+ * Soul bound NFT contract.
  * Fix errors in smart Contract
  * Used Web3.Storage on Front end
  * Used NFT.Storage on Front end
- * Fix and Polished the front end code.
+ * Fixed and Polished the front end code.
  
  
  <br/>
@@ -268,6 +271,16 @@ Of course we can still change some of our logic and their is always room for imp
  
  M.FaiqKhan (Researcher and blockchain dev)
 
+A half incomplete SBT logic (was'nt even compatible and was'nt used in the actual smart contract)  :
 
- 
+ <br/>
+https://github.com/MFaiqKhan/Moralis-x-Filecoin-Hackathon/commit/2886eb0f255420592140db6c0e64adbe4311f908
+
+ <br/>
+
+20 line basic html and css :
+
+ <br/>
+
+ https://github.com/rolic-hub/moralis-x-filecoin-frontend/commit/99aa11114de688db31b57a25cbc2f34791c2ffc1
  
