@@ -271,14 +271,9 @@ Of course we can still change some of our logic and their is always room for imp
  
  M.FaiqKhan (Researcher and blockchain dev)
 
-A half incomplete SBT logic (was'nt even compatible and was'nt used in the actual smart contract)  :
 
- <br/>
+
 https://github.com/MFaiqKhan/Moralis-x-Filecoin-Hackathon/commit/2886eb0f255420592140db6c0e64adbe4311f908
-
- <br/>
-
-20 line basic html and css :
 
  <br/>
 
