@@ -16,22 +16,24 @@ yarn dev
 ## Project : Web3 Fundraising Project
 
  
-<br/>
 
-### Disclaimer the project is'nt fully completed . We could'nt make the front end dynamic and it is not responsive
 
-<br/>
-
-### Smart contract repo : https://github.com/umershaikh123/morlis-x-filecoin-SmartContract
+### Disclaimer :
+The project is'nt fully completed . We could'nt make the front end dynamic and it is not responsive
 
 <br/>
 
-## Designs :
+### Smart contract repo
+ Link: https://github.com/umershaikh123/morlis-x-filecoin-SmartContract
+
+<br/>
+
+### Designs :
 Link : https://www.figma.com/file/y6DAZMsWFNriJaF4Ol2lP9/Daily-UI---Day-01-(Community)?node-id=792%3A1026
 
  
  
-
+<br/>
 
 ## Techonlogies used
 
