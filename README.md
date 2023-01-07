@@ -8,7 +8,7 @@ npm run dev
 yarn dev
 ```
 
-# Moralis x Filecoin Hackathon project
+# Moralis x Filecoin Hackathon Winner project 
 
 <br/>
  
@@ -26,7 +26,8 @@ yarn dev
 
 <br/>
 
-## Designs : https://www.figma.com/file/y6DAZMsWFNriJaF4Ol2lP9/Daily-UI---Day-01-(Community)?node-id=792%3A1026
+## Designs :
+Link : https://www.figma.com/file/y6DAZMsWFNriJaF4Ol2lP9/Daily-UI---Day-01-(Community)?node-id=792%3A1026
 
  
  
